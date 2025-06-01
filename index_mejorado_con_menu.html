@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Herencia Justa</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet"/>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    background-color: #f2f4f8;
+    color: #1b263b;
+  }
+  header {
+    background: url('cuenca-header.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(13, 27, 42, 0.7);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-content img {
+    width: 110px;
+    margin-bottom: 1rem;
+  }
+  .hero-content h1 {
+    font-size: 2.8rem;
+    color: #d4af37;
+    margin: 0;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #0d1b2a;
+    z-index: 999;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+  }
+  nav a:hover {
+    color: #d4af37;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero-content">
+    <img src="logo-herencia.png" alt="Logo Herencia Justa"/>
+    <h1>Herencia Justa</h1>
+    <p>"Nuestra voz, nuestra herencia." Construyendo un país justo desde la juventud y la conciencia ciudadana.</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#quienes">¿Quiénes Somos?</a>
+  <a href="#ofrecemos">Lo que Hacemos</a>
+  <a href="#jovenes-herencia">Jóvenes con Herencia</a>
+  <a href="#noticias">Noticias</a>
+  <a href="#publica">Publica</a>
+  <a href="#contacto">Contáctanos</a>
+</nav>
+
+<!-- El resto del contenido existente del sitio irá aquí -->
+<!-- Se insertará desde el archivo original sin alteraciones -->
+
+<section class="fade-in" id="quienes">
+<h2>¿Quienes Somos?</h2>
+<p style="text-align:justify;">En Herencia Justa nos organizamos como una iniciativa ciudadana nacida desde la juventud para construir un Ecuador más justo, ético y participativo. Sin ataduras partidistas ni compromisos con el poder, promovemos una ciudadanía activa, crítica y comprometida con la transformación social desde la raíz.</p>
+<p style="text-align:justify;">Apoyamos y promulgamos una nueva forma de hacer política basada en la transparencia, la justicia social, la participación equitativa y el desarrollo territorial con enfoque humano. Nuestro objetivo es despertar el pensamiento crítico, impulsar la organización comunitaria y fortalecer el liderazgo juvenil con visión de futuro.</p>
+</section>
+
+<section id="quienes-somos" style="padding: 60px 20px; background-color:#fdfdfd;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2>Conoce más</h2>
+    <p style="text-align: justify;">Herencia Justa es un movimiento ciudadano impulsado por jóvenes comprometidos con transformar su país desde los valores, la ética y la participación activa.</p>
+    <div style="margin-top: 1.5rem;">
+      <a href="#principios" style="display:inline-block; background-color:#d4af37; color:#0d1b2a; padding:0.7rem 1.5rem; text-decoration:none; border-radius:6px; font-weight:bold;">
+        Ver Misión, Visión y Valores
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="fade-in" id="ofrecemos">
+<h2>Lo que Hacemos</h2>
+<div class="product-grid">
+<div class="product-card">
+<h3>🗣️ Foros Ciudadanos</h3>
+<p style="text-align:justify;">Espacios públicos de diálogo para discutir temas urgentes del país desde la comunidad. Escuchamos, debatimos y construimos propuestas.</p>
+</div>
+<div class="product-card">
+<h3>👁️ Observatorio Cívico</h3>
+<p style="text-align:justify;">Plataforma de vigilancia ciudadana para denunciar injusticias, evaluar autoridades y fomentar la transparencia institucional.</p>
+</div>
+<div class="product-card">
+<h3>📘 Capacitación Política y Social</h3>
+<p style="text-align:justify;">Formación abierta y gratuita sobre derechos constitucionales, liderazgo juvenil, ética política y participación ciudadana efectiva.</p>
+</div>
+<div class="product-card">
+<h3>🌱 Jóvenes con Herencia Justa</h3>
+<p style="text-align:justify;">Programa de impulso a liderazgos jóvenes desde los barrios y comunidades, promoviendo el pensamiento crítico y el activismo social.</p>
+</div>
+</div>
+</section>
+<style>
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeInUp 1s ease-in-out; opacity: 1; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .product-card {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-left: 5px solid #d4af37;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .product-card h3 {
+      font-size: 1.3rem;
+      color: #0d1b2a;
+      margin-bottom: 0.5rem;
+    }
+    .product-card p {
+      font-size: 1rem;
+      color: #333;
+    }
+  </style>
+<section class="fade-in" id="noticias">
+<h2>Noticias y Temas Relevantes</h2>
+<div class="noticias-grid">
+<div class="card">
+<h3>¿Qué pasa con la participación juvenil?</h3>
+<p style="text-align:justify;">La juventud despierta y exige espacios. Cada vez más jóvenes participan activamente en asambleas y movimientos sociales.</p>
+</div>
+<div class="card">
+<h3>Presupuesto Municipal 2025</h3>
+<p style="text-align:justify;">Analizamos cómo se están distribuyendo los recursos y qué sectores han sido favorecidos o ignorados.</p>
+</div>
+<div class="card">
+<h3>Ciudadanía y vigilancia cívica</h3>
+<p style="text-align:justify;">El observatorio ciudadano de Herencia Justa revela preocupantes omisiones en el cumplimiento del presupuesto participativo.</p>
+</div>
+</div>
+</section>
+<section class="fade-in" id="publica">
+<h2>Publica con Nosotros</h2>
+<p style="text-align:justify;">¿Quieres escribir sobre la realidad política de tu ciudad o país? Envíanos tu artículo bien estructurado y respetuoso al correo <a href="mailto:herenciajusta@gmail.com">herenciajusta@gmail.com</a>.</p>
+</section>
+<section class="fade-in" id="contacto">
+<h2>Contáctanos</h2>
+<p style="text-align:justify;">Si deseas unirte al proyecto Herencia Justa o colaborar de alguna manera, escríbenos. También puedes enviarnos tus preguntas o sugerencias sobre temas relevantes para Cuenca, Ecuador o tu ciudad.</p>
+<form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST">
+<input name="nombre" placeholder="Tu nombre (opcional)" type="text"/>
+<input name="ciudad" placeholder="Ciudad o provincia" required="" type="text"/>
+<textarea name="mensaje" placeholder="Recomienda un tema o formula una pregunta relevante..." required="" rows="4"></textarea>
+<button type="submit">Enviar mensaje</button>
+</form>
+</section>
+<section id="boletin">
+<h2>Boletín Digital Mensual</h2>
+<p style="text-align:justify;">¿Te interesa estar al día con la lucha ciudadana, la participación joven y las acciones de Herencia Justa? Suscríbete a nuestro boletín mensual y recibe lo mejor directamente en tu correo.</p>
+<form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST">
+<input name="nombre" placeholder="Tu nombre (opcional)" type="text"/>
+<input name="email" placeholder="Tu correo electrónico" required="" type="email"/>
+<input name="_subject" type="hidden" value="Nueva suscripción al boletín Herencia Justa"/>
+<button type="submit">Suscribirme</button>
+</form>
+</section>
+<section id="jovenes-herencia" style="background-color:#0f1a2c; color:#fff; padding:40px;">
+<h2 style="color:#00ffcc;">Jóvenes con Herencia Justa</h2>
+<p style="text-align:justify;">La plataforma que forma, conecta y empodera a líderes jóvenes comprometidos con la transformación de su comunidad.</p>
+<h3>¿Qué ofrecemos?</h3>
+<ul>
+<li style="text-align:justify;">📚 Formación exclusiva en oratoria, liderazgo, incidencia ciudadana, redes y análisis político.</li>
+<li style="text-align:justify;">🧑‍🏫 Mentoría con referentes del derecho, la comunicación y la organización social.</li>
+<li style="text-align:justify;">🎥 Visibilidad en nuestras redes y medios aliados.</li>
+<li style="text-align:justify;">📜 Certificación de participación avalada por Herencia Justa.</li>
+</ul>
+<h3>Modalidades de participación</h3>
+<p style="text-align:justify;"><strong>Plan gratuito:</strong> Acceso a recursos y actividades generales.</p>
+<p style="text-align:justify;"><strong>Plan premium:</strong> Mentoría personalizada, material exclusivo y certificación. </p>
+<p style="text-align:justify;">🎓 ¡Forma parte de la Red de Jóvenes con Herencia Justa! Inscríbete llenando el siguiente formulario:</p>
+<form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST">
+<input name="nombre" placeholder="Tu nombre completo" required="" type="text"/>
+<input name="correo" placeholder="Tu correo electrónico" required="" type="email"/>
+<textarea name="motivacion" placeholder="¿Por qué deseas ser parte del programa?" required=""></textarea>
+<input name="_subject" type="hidden" value="Inscripción Programa Jóvenes con Herencia Justa"/>
+<button type="submit">Unirme al Programa</button>
+</form>
+</section>
+<footer>
+<p style="">Herencia Justa es una propuesta ciudadana e iniciativa juvenil de reflexión política. No representa a un movimiento político registrado ante el Consejo Nacional Electoral.</p>
+<p style="">© 2025 Herencia Justa. Todos los derechos reservados.</p>
+</footer>
+
+<section id="principios" style="background-color:#ffffff; padding: 60px 20px;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="text-align:center;">Nuestros Principios</h2>
+
+    <h3 style="font-family:'Playfair Display', serif; color:#0d1b2a;">Misión</h3>
+    <div style="background:#f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+      <p style="text-align: justify;">Promover una ciudadanía activa, ética y consciente en Ecuador, fortaleciendo la participación juvenil, la justicia social y la formación política desde los barrios y comunidades.</p>
+    </div>
+
+    <h3 style="font-family:'Playfair Display', serif; color:#0d1b2a;">Visión</h3>
+    <div style="background:#f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+      <p style="text-align: justify;">Ser una referencia nacional de liderazgo ciudadano y transformación política transparente, hasta constituirnos en una fuerza ética de incidencia social con reconocimiento institucional.</p>
+    </div>
+
+    <h3 style="font-family:'Playfair Display', serif; color:#0d1b2a;">Valores</h3>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+      <div style="background:#f2f4f8; padding:1rem; border-radius:8px;">Transparencia</div>
+      <div style="background:#f2f4f8; padding:1rem; border-radius:8px;">Justicia social</div>
+      <div style="background:#f2f4f8; padding:1rem; border-radius:8px;">Compromiso ciudadano</div>
+      <div style="background:#f2f4f8; padding:1rem; border-radius:8px;">Igualdad de oportunidades</div>
+      <div style="background:#f2f4f8; padding:1rem; border-radius:8px;">Autonomía e independencia</div>
+      <div style="background:#f2f4f8; padding:1rem; border-radius:8px;">Liderazgo ético</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
