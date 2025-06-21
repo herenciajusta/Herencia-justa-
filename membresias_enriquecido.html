@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afiliaciones | Herencia Justa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Lora', serif;
+      background-color: #f2f4f8;
+      color: #1b263b;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #0d1b2a, #1c2e4a);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #d4af37;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+    .afiliacion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background-color: white;
+      border-left: 6px solid #d4af37;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      list-style-type: square;
+      padding-left: 1.2rem;
+      color: #333;
+    }
+    .card ul li {
+      margin-bottom: 0.7rem;
+    }
+    .indicador {
+      background-color: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .indicador h2 {
+      color: #d4af37;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .compromiso, .faq {
+      background-color: white;
+      border-left: 6px solid #d4af37;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-top: 2rem;
+    }
+    .faq h3, .compromiso h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+    }
+    .faq p, .compromiso p {
+      margin-bottom: 1rem;
+    }
+    .volver {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .volver a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎖️ Afiliaciones Herencia Justa</h1>
+    <p>Comprométete con una ciudadanía activa y ética. Conoce nuestras formas de participación y afíliate a un movimiento que construye justicia desde la raíz.</p>
+  </header>
+
+  <section>
+    <div class="indicador">
+      <h2>🎯 Ya somos 52 afiliados en todo el país</h2>
+      <p>Gracias por creer en una nueva forma de participación ciudadana. Cada voz cuenta.</p>
+    </div>
+
+    <div class="afiliacion-grid">
+      <div class="card">
+        <h2>Afiliado Inicial</h2>
+        <ul>
+          <li>Acceso anticipado a contenidos educativos y noticias</li>
+          <li>Participación en consultas abiertas de Herencia Justa</li>
+          <li>Reconocimiento como miembro fundador</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Afiliado Participante</h2>
+        <ul>
+          <li>Participación en decisiones internas y encuestas estratégicas</li>
+          <li>Acceso a encuentros formativos y talleres ciudadanos</li>
+          <li>Posibilidad de proponer iniciativas dentro del proyecto</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Afiliado Estratégico</h2>
+        <ul>
+          <li>Participación en comités consultivos y planificación</li>
+          <li>Formación avanzada y mentoría con el equipo fundador</li>
+          <li>Prioridad para integrar futuras acciones del movimiento</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="compromiso">
+      <h3>🤝 Nuestro Compromiso con los Afiliados</h3>
+      <p>Al afiliarte a Herencia Justa, te garantizamos:</p>
+      <ul>
+        <li>🔒 Cero manipulación política o partidista</li>
+        <li>📖 Transparencia en nuestras decisiones y acciones</li>
+        <li>🎓 Formación gratuita y continua para todos</li>
+        <li>🗣️ Respeto y escucha activa a tu voz como ciudadano</li>
+      </ul>
+    </div>
+
+    <div class="faq">
+      <h3>❓ Preguntas Frecuentes</h3>
+      <p><strong>¿Qué pasa después de afiliarme?</strong><br>Recibirás un correo de bienvenida y acceso al contenido exclusivo para tu nivel de afiliación.</p>
+      <p><strong>¿Puedo dejar de ser afiliado cuando quiera?</strong><br>Sí, puedes darte de baja en cualquier momento sin compromisos.</p>
+      <p><strong>¿Cuál es la diferencia entre los niveles?</strong><br>Cada nivel ofrece un grado distinto de participación, acceso a formación y toma de decisiones.</p>
+      <p><strong>¿Puedo ser afiliado si pertenezco a otro colectivo?</strong><br>Sí, Herencia Justa es un proyecto abierto a personas diversas que compartan valores éticos y ciudadanos.</p>
+    </div>
+
+    <div class="volver">
+      <a href="index.html">← Volver al inicio</a>
+    </div>
+  </section>
+
+</body>
+</html>
