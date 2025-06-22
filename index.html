@@ -446,40 +446,6 @@
 
 
 
-</section>
-
-
-
-
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("menu-toggle");
-    const nav = document.querySelector("nav");
-    const links = nav.querySelectorAll("a");
-
-    toggle.addEventListener("click", () => {
-      toggle.classList.toggle("active");
-      links.forEach(link => link.classList.toggle("show"));
-    });
-
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-          toggle.classList.remove("active");
-          links.forEach(l => l.classList.remove("show"));
-        }
-      });
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        toggle.classList.remove("active");
-        links.forEach(link => link.classList.remove("show"));
-      }
-    });
-  });
 <section id="identidad" style="background-color: #fefefe; padding: 3rem;">
   <h2 style="text-align: center; color: #0d1b2a; font-family: 'Playfair Display', serif;">Nuestra Identidad</h2>
   <hr style="width: 60px; height: 3px; background-color: #d4af37; border: none; margin: 1rem auto 2rem;">
