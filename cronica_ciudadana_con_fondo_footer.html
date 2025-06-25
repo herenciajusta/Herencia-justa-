@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crónica Ciudadana | Herencia Justa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Lora', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #f2f4f8 0%, #ffffff 100%);
+      color: #1b263b;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: #fff;
+      padding: 4rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(13, 27, 42, 0.6);
+      z-index: 0;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+      color: #d4af37;
+      font-size: 2.8rem;
+      margin: 0;
+    }
+    .intro {
+      max-width: 850px;
+      margin: 2rem auto;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .intro h2 {
+      font-size: 1.6rem;
+      color: #0d1b2a;
+      margin-bottom: 0.5rem;
+    }
+    .intro p {
+      font-size: 1.1rem;
+      color: #334;
+    }
+    .form-container {
+      background-color: #fff;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    input, textarea {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      width: 100%;
+    }
+    button {
+      background-color: #d4af37;
+      color: #0d1b2a;
+      padding: 1rem;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #c29d30;
+      transform: scale(1.02);
+    }
+    .info {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #666;
+      margin-top: 1rem;
+    }
+    footer {
+      background-color: #0d1b2a;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    .volver {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: #0d1b2a;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .volver:hover {
+      background-color: #1f2e3d;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Crónica Ciudadana</h1>
+</header>
+
+<div class="intro">
+  <h2>¡Es tu turno de contar lo que está pasando!</h2>
+  <p>¿Viviste algo importante en tu comunidad? ¿Viste una injusticia o una buena acción que merece ser contada?</p>
+  <p><strong>Este espacio es para ti.</strong> Comparte tu crónica y haz que más personas se enteren.</p>
+</div>
+
+<div class="form-container">
+  <form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Nueva crónica ciudadana">
+    <input type="text" name="titulo" placeholder="Título de tu crónica" required />
+    <textarea name="contenido" rows="6" placeholder="Escribe tu historia, denuncia o noticia..." required></textarea>
+    <input type="text" name="autor" placeholder="Tu nombre o seudónimo (opcional)" />
+    <button type="submit">📤 Enviar mi crónica</button>
+    <p class="info">Todas las crónicas serán revisadas antes de publicarse. Evita lenguaje ofensivo o sin fundamento.</p>
+  </form>
+</div>
+
+<div style="text-align: center;">
+  <a href="index_con_cronica_con_boton.html" class="volver">⬅️ Volver a la página principal</a>
+</div>
+
+
+<footer>
+  <p>Herencia Justa es una propuesta ciudadana e iniciativa juvenil de reflexión política. No representa a un movimiento político registrado ante el Consejo Nacional Electoral.</p>
+  <p>© 2025 Herencia Justa. Todos los derechos reservados.</p>
+</footer>
+
+
+</body>
+</html>
