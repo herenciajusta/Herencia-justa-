@@ -1,0 +1,23 @@
+[
+  {
+    "titulo": "Cuenca decide",
+    "contenido": "El Concejo Cantonal analiza nuevas ordenanzas de participación ciudadana.",
+    "autor": "Cristian Peñafiel",
+    "fecha": "2025-07-27",
+    "imagen": "img/cuenca-decide.jpg"
+  },
+  {
+    "titulo": "El rol juvenil en el nuevo Ecuador",
+    "contenido": "Un informe sobre cómo los jóvenes están liderando procesos de transformación local.",
+    "autor": "Magalli Granda",
+    "fecha": "2025-07-20",
+    "imagen": "img/rol-juvenil.jpg"
+  },
+  {
+    "titulo": "Presupuesto participativo: ¿realidad o promesa?",
+    "contenido": "Ciudadanos cuestionan la ejecución presupuestaria en los barrios de Cuenca.",
+    "autor": "Herencia Justa",
+    "fecha": "2025-07-15",
+    "imagen": "img/presupuesto.jpg"
+  }
+]
