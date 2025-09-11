@@ -1,0 +1,20 @@
+{
+  "name": "Herencia Justa",
+  "short_name": "HerenciaJusta",
+  "start_url": "/index(14).html",
+  "display": "standalone",
+  "background_color": "#0d1b2a",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "logo-herencia.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-herencia.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
