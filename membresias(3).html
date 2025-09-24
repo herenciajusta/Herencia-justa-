@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afiliaciones | Herencia Justa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Lora', serif;
+      background-color: #f2f4f8;
+      color: #1b263b;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #0d1b2a, #1c2e4a);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #d4af37;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+    .afiliacion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background-color: white;
+      border-left: 6px solid #d4af37;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      list-style-type: square;
+      padding-left: 1.2rem;
+      color: #333;
+    }
+    .card ul li {
+      margin-bottom: 0.7rem;
+    }
+    .indicador {
+      background-color: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .indicador h2 {
+      color: #d4af37;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .compromiso, .faq {
+      background-color: white;
+      border-left: 6px solid #d4af37;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-top: 2rem;
+    }
+    .faq h3, .compromiso h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+    }
+    .faq p, .compromiso p {
+      margin-bottom: 1rem;
+    }
+    .volver {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .volver a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* Estilos para planes y botones */
+    .plan button {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Lora', serif;
+    }
+    .interview-btn {
+      background-color: #d4af37;
+      color: #0d1b2a;
+    }
+    .pay-btn {
+      background-color: #0d1b2a;
+      color: white;
+    }
+    .pay-btn[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .modal .close-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #0d1b2a;
+    }
+    .modal-content input, .modal-content button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Lora', serif;
+    }
+    .modal-content button {
+      background-color: #0d1b2a;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    /* Bloque de confianza */
+    .trust {
+      background-color: white;
+      border-left: 6px solid #d4af37;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-top: 2rem;
+    }
+    .trust h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+    }
+    .trust p {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎖️ Afiliaciones Herencia Justa</h1>
+    <p>Tu tranquilidad jurídica está a un paso. Afíliate y disfruta de respuesta inmediata y consultas presenciales con nuestro equipo.</p>
+  </header>
+
+  <section>
+    <div class="indicador">
+      <h2>🎯 Ya somos 52 afiliados en todo el país</h2>
+      <p>Gracias por creer en una nueva forma de participación ciudadana. Cada voz cuenta.</p>
+    </div>
+
+    <div class="afiliacion-grid">
+      <!-- Plan Participante -->
+      <div class="card plan">
+        <h2>Afiliado Participante – $10/mes</h2>
+        <ul>
+          <li>Respuesta inmediata a tus consultas</li>
+          <li>1 consulta legal presencial al mes en nuestro estudio de Herencia Justa</li>
+          <li>Seguimiento y actualización diaria de tus trámites y procesos judiciales</li>
+          <li>Elaboración de hasta 2 oficios al mes</li>
+          <li>Acceso a plantillas premium</li>
+        </ul>
+        <button class="interview-btn">Solicitar entrevista</button>
+        <button class="pay-btn" disabled>Pagar $10/mes</button>
+      </div>
+      <!-- Plan Estratégico -->
+      <div class="card plan">
+        <h2>Afiliado Estratégico – $15/mes</h2>
+        <ul>
+          <li>Respuesta inmediata a tus consultas</li>
+          <li>2 consultas legales presenciales al mes en nuestro estudio</li>
+          <li>Seguimiento y actualización diaria de tus trámites y procesos judiciales</li>
+          <li>Elaboración de hasta 2 oficios al mes</li>
+          <li>Acceso a plantillas premium</li>
+          <li>Inicio de 1 acción legal al mes con tarifas preferentes con el equipo de Herencia Justa</li>
+          <li>1 asesoría virtual de 30 minutos al mes</li>
+          <li>Cobertura para 2 miembros del núcleo familiar inmediato</li>
+        </ul>
+        <button class="interview-btn">Solicitar entrevista</button>
+        <button class="pay-btn" disabled>Pagar $15/mes</button>
+      </div>
+    </div>
+
+    <div class="compromiso">
+      <h3>🤝 Nuestro Compromiso con los Afiliados</h3>
+      <p>Al afiliarte a Herencia Justa, te garantizamos:</p>
+      <ul>
+        <li>🔒 Cero manipulación política o partidista</li>
+        <li>📖 Transparencia en nuestras decisiones y acciones</li>
+        <li>🎓 Formación gratuita y continua para todos</li>
+        <li>🗣️ Respeto y escucha activa a tu voz como ciudadano</li>
+      </ul>
+    </div>
+
+    <div class="trust">
+      <h3>🔐 Seguridad y Transparencia</h3>
+      <p>Tu confianza es lo primero. Antes de realizar cualquier pago, coordinamos una entrevista personal contigo para conocerte y explicarte el servicio. Así evitamos estafas y aseguramos un trato humano y cercano.</p>
+      <p>Todas las suscripciones se facturan con nuestro RUC oficial y podrás visitar nuestras oficinas físicas en Cuenca. Cumplimos con la LOPDP y emitimos factura electrónica.</p>
+      <p><strong>Garantía:</strong> si no recibes atención inmediata, te devolvemos la mensualidad.</p>
+    </div>
+
+    <div class="faq">
+      <h3>❓ Preguntas Frecuentes</h3>
+      <p><strong>¿Necesito una entrevista antes de pagar?</strong><br>Sí. Como medida de seguridad y para conocerte, debes agendar una entrevista personal. Después serás redirigido a una página con los botones de pago activos.</p>
+      <p><strong>¿Qué incluye el inicio de acción legal mensual?</strong><br>Incluye la elaboración y presentación inicial de tu demanda o reclamo. Si el caso requiere seguimiento, tendrás tarifas preferentes con nuestros abogados.</p>
+      <p><strong>¿Cómo funcionan las consultas presenciales?</strong><br>El plan Participante incluye 1 consulta al mes; el plan Estratégico, 2. Se coordinan en nuestro estudio en Cuenca.</p>
+      <p><strong>¿Qué pasa si no recibo respuesta inmediata?</strong><br>Si no atendemos tu consulta de inmediato, reembolsaremos tu mensualidad.</p>
+    </div>
+
+    <div class="volver">
+      <a href="index.html">← Volver al inicio</a>
+    </div>
+
+    <!-- Modal para entrevista -->
+    <div id="interview-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Agenda tu entrevista personalizada</h3>
+        <p>Completa tus datos y nos comunicaremos contigo para coordinar la entrevista.</p>
+        <!-- Formulario conectado a FormSubmit: envío por POST y redirección absoluta a nuestro sitio -->
+        <form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST" accept-charset="UTF-8">
+          <!-- Datos visibles -->
+          <input type="text" name="nombre" placeholder="Nombre completo" required>
+          <input type="email" name="email" placeholder="Correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+          <textarea name="motivo" rows="3" placeholder="¿Cuál es tu necesidad?"></textarea>
+          <!-- Metadatos y configuración de FormSubmit -->
+          <input type="hidden" name="_subject" value="Nueva solicitud de entrevista | Herencia Justa">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="¡Gracias! Te contactaremos enseguida para coordinar tu entrevista.">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- URL absoluta para la página de gracias en nuestro dominio -->
+          <input type="hidden" name="_next" value="https://herenciajustaec.com/gracias.html">
+          <!-- Campo honeypot para evitar spam; no se muestra al usuario -->
+          <input type="text" name="_honey" style="display:none">
+          <!-- Permitir responder directamente al remitente -->
+          <input type="hidden" name="_replyto" value="email">
+          <!-- Botón de envío -->
+          <button type="submit">Enviar solicitud</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById('interview-modal');
+    const closeBtn = modal.querySelector('.close-btn');
+    const interviewBtns = document.querySelectorAll('.interview-btn');
+
+    interviewBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', function(){
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event){
+      if(event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>
