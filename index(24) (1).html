@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!-- Preconnect and dns-prefetch for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<title>Herencia Justa</title>
+    <!-- Meta description and author -->
+    <meta name="description" content="Herencia Justa es una iniciativa ciudadana juvenil enfocada en fomentar la participación cívica, los derechos ciudadanos y la transparencia en Ecuador. Descubre foros, observatorios cívicos, capacitaciones y más para construir un país justo desde la juventud."/>
+    <meta name="author" content="Herencia Justa"/>
+    <!-- Open Graph and Twitter Card metadata -->
+    <meta property="og:title" content="Herencia Justa"/>
+    <meta property="og:description" content="Herencia Justa es una iniciativa ciudadana juvenil por un Ecuador más justo."/>
+    <meta property="og:image" content="logo-herencia.png"/>
+    <meta property="og:url" content="https://herenciajustaec.com/"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <!-- JSON-LD structured data for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Herencia Justa",
+      "url": "https://herenciajustaec.com/",
+      "logo": "logo-herencia.png"
+    }
+    </script>
+    <!-- Favicon and PWA manifest -->
+    <link rel="icon" type="image/png" href="logo-herencia.png" sizes="32x32"/>
+    <link rel="manifest" href="site.webmanifest"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&amp;display=swap" rel="stylesheet" style="text-align:justify;"/>
+<style>
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeInUp 1s ease-in-out; opacity: 1; }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lora', serif;
+      background-color: #f2f4f8;
+      color: #1b263b;
+      line-height: 1.6;
+    }
+    .hero {
+      background: url('cuenca-header.png') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(13, 27, 42, 0.7);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero img {
+      width: 110px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #d4af37;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    nav {
+      background-color: #14213d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    ul {
+      list-style: square;
+      margin-left: 1.5rem;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Lora', serif;
+    }
+    form button {
+      background-color: #d4af37;
+      color: #0d1b2a;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .noticias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: #fefefe;
+      border-left: 5px solid #d4af37;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    /* Estilo para el botón Leer más en la sección de noticias */
+    .btn-leer-mas {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.45rem 1rem;
+      background-color: #d4af37;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+    .btn-leer-mas:hover {
+      background-color: #c39c2a;
+    }
+    /* Contenido completo oculto por defecto */
+    .full-content {
+      display: none;
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      color: #1b263b;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #444;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #0d1b2a;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    /* Estilos para los artículos del boletín en la página principal */
+    #boletin .articulo {
+      background-color: #ffffff;
+      border-left: 5px solid #d4af37;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #boletin .articulo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    #boletin .articulo h3 {
+      font-size: 1.2rem;
+      color: #0d1b2a;
+      margin-bottom: 0.3rem;
+    }
+    #boletin .articulo p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+  
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .product-card:hover, .card:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+
+    footer {
+      background-color: #0d1b2a;
+      color: #ccc;
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1.5rem 1rem;
+    }
+    
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #0d1b2a;
+      border-left: 6px solid #d4af37;
+      padding-left: 12px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    </style>
+<style>
+  /* Nuevas tarjetas de noticias con diseño interactivo */
+  .news-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .news-card h3 {
+    margin: 1rem 1rem 0.5rem;
+    font-size: 1.4rem;
+    color: #0d1b2a;
+  }
+  .news-card p.meta {
+    margin: 0 1rem 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .news-card p.excerpt,
+  .news-card .full-content p {
+    margin: 0 1rem;
+    color: #444;
+    text-align: justify;
+  }
+  .news-card .full-content {
+    display: none;
+  }
+  .news-card .btn-leer-mas {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .news-card .btn-leer-mas:hover {
+    background-color: #c39c2a;
+  }
+  .news-card a {
+    color: #0d1b2a;
+    text-decoration: underline;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=Lora&amp;display=swap" rel="stylesheet"/>
+<style>
+  .boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d4af37;
+  color: #0d1b2a;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  z-index: 10000;
+  transition: transform 0.2s ease;
+}
+.boton-flotante:hover {
+  transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+  }
+  .menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d4af37;
+  color: #0d1b2a;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  z-index: 10000;
+  transition: transform 0.2s ease;
+}
+.boton-flotante:hover {
+  transform: scale(1.05);
+}
+
+.menu-toggle {
+      display: flex;
+    }
+    nav {
+      flex-direction: column !important;
+    }
+    nav a {
+      display: none;
+      width: 100%;
+      padding: 1rem;
+      border-top: 1px solid #1f2e3d;
+      text-align: center;
+      background-color: #0d1b2a;
+    }
+    nav a.show {
+      display: block;
+    }
+  }
+</style>
+</style>
+<style>
+  .btn-boletin {
+    background-color: #0d1b2a;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 2rem;
+  }
+
+  .btn-boletin:hover {
+    background-color: #1c2e4a;
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  }
+</style>
+<style>
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background-color: #d4af37;
+    color: #0d1b2a;
+    padding: 0.5rem 1rem;
+    z-index: 10000;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+</style>
+
+    <!-- Ensure text remains visible during webfont loading -->
+    <style>
+      /* The font-display: swap rule instructs the browser to fallback to system fonts until the webfont
+       * finishes downloading. This improves perceived performance and eliminates invisible text flashes. */
+      @font-face {
+        font-display: swap;
+      }
+    </style>
+</head>
+<body>
+<a href="#quienes" class="skip-link">Saltar al contenido principal</a>
+<a class="boton-flotante" href="#jovenes-herencia" aria-label="Unirme al programa Jóvenes con Herencia">ÚNETE</a>
+<button aria-label="Menú" class="menu-toggle" id="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<nav id="main-nav" role="navigation" aria-label="Menú principal" style="position: sticky; top: 0; background-color: #0d1b2a; padding: 0.7rem 1rem; z-index: 1000; display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;">
+<a href="#quienes" style="color: white; text-decoration: none; font-weight: bold;">¿Quiénes Somos?</a>
+<a href="#ofrecemos" style="color: white; text-decoration: none; font-weight: bold;">Lo que Hacemos</a>
+<a href="#jovenes-herencia" style="color: white; text-decoration: none; font-weight: bold;">Jóvenes con Herencia</a>
+<a href="#noticias" style="color: white; text-decoration: none; font-weight: bold;">Noticias</a>
+<a href="#publica" style="color: white; text-decoration: none; font-weight: bold;">Publica</a>
+<a href="cronica_ciudadana.html" style="color: white; text-decoration: none; font-weight: bold;">Crónica Ciudadana</a>
+        <!-- Enlace a nuestra nueva sección de consultas legales -->
+        <a href="#consulta-derecho" style="color: white; text-decoration: none; font-weight: bold;">Consulta Legal</a>
+<a href="#contacto" style="color: white; text-decoration: none; font-weight: bold;">Contáctanos</a>
+</nav>
+<header class="hero">
+<div class="hero-content">
+<img alt="Logo Herencia Justa" src="logo-herencia.png"/>
+<h1>Herencia Justa</h1>
+<p style="max-width:600px;margin:auto;font-size:1.15rem;">“Nuestra voz, nuestra herencia.” Construyendo un país justo desde la juventud y la conciencia ciudadana.</p>
+</div>
+</header>
+<section id="reloj" style="padding: 4rem 1rem; background-image: linear-gradient(rgba(13,27,42,0.8), rgba(27,38,59,0.8)), url('img/election-countdown.png'); background-size: cover; background-position: center; color: #fff; text-align: center; position: relative;">
+<h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #d4af37;">⏳ ¿Cuánto falta para las elecciones?</h2>
+    <!-- La ilustración de la cuenta regresiva ahora se integra como fondo fusionado -->
+<p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">
+    El tiempo avanza. Infórmate, participa y haz que tu voz cuente. ¡No dejes que otros decidan por ti!
+  </p>
+<div id="countdown" aria-live="polite" role="timer" style="font-size: 2rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;"></div>
+<a href="#herramientas" style="margin-top: 2rem; display: inline-block; background-color: #d4af37; color: #0d1b2a; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold;">
+    🧠 Conoce tus derechos ciudadanos
+  </a>
+</section>
+<script>
+  /* Recupera la fecha objetivo desde un archivo de configuración para facilitar la actualización
+   * del contador electoral sin tener que modificar el código. Si el archivo no está disponible
+   * o falla la solicitud, se utilizará una fecha predeterminada. */
+  let targetDate;
+  const countdownEl = document.getElementById("countdown");
+
+  function updateCountdown() {
+    if (!targetDate) return;
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      countdownEl.innerHTML = "¡El día ha llegado!";
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    countdownEl.innerHTML = `
+      <div><strong>${days}</strong><br>días</div>
+      <div><strong>${hours}</strong><br>horas</div>
+      <div><strong>${minutes}</strong><br>minutos</div>
+      <div><strong>${seconds}</strong><br>segundos</div>
+    `;
+  }
+
+  // Solicita la fecha de elecciones desde config.json; usa valor por defecto si falla.
+  fetch('config.json')
+    .then(res => res.json())
+    .then(cfg => {
+      targetDate = new Date(cfg.electionDate || "2027-02-20T00:00:00");
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })
+    .catch(() => {
+      targetDate = new Date("2027-02-20T00:00:00");
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+</script>
+
+<!-- Inicio de sección de consultas legales: Tu Derecho Justo Ahora -->
+<section id="consulta-derecho" style="padding: 4rem 1rem; background-image: linear-gradient(rgba(27,38,59,0.8), rgba(13,27,42,0.8)), url('img/consulta-legal.png'); background-size: cover; background-position: center; color: #fff; text-align: center; position: relative;">
+  <h2 style="font-size: 2.4rem; margin-bottom: 1rem; color: #d4af37;">⚖️ Tu Derecho Justo Ahora</h2>
+  <!-- La ilustración de consulta legal ahora se integra como fondo fusionado -->
+  <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">
+    ¿Necesitas orientación legal inmediata? Obtén una consulta rápida y gratuita sobre tus derechos y opciones.
+    Nuestro equipo de abogados está listo para ayudarte a resolver tus dudas, sin costo y sin compromiso.
+  </p>
+  <a href="consulta-gratuita.html" style="margin-top: 1rem; display: inline-block; background-color: #d4af37; color: #0d1b2a; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold;">
+    ✉️ Realiza tu consulta gratuita
+    </a>
+
+    <p style="margin-top: 0.8rem; font-size: 0.95rem;">
+      ¿Quieres más que una consulta?
+      <a href="membresias.html" style="color: #d4af37; font-weight: bold; text-decoration: none;">
+        Conoce nuestras Membresías →
+      </a>
+    </p>
+</section>
+
+
+<section id="herramientas" style="max-width:1100px;margin:2rem auto;padding:2rem;background:#ffffff;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+  <h2>Herramientas Ciudadanas</h2>
+  <ul style="margin-left:1.5rem;">
+    <li>Guías rápidas: derecho a la petición, acceso a la información y veedurías.</li>
+    <li>Rutas de acción: ¿a dónde acudir? ¿cómo denunciar?</li>
+    <li>Plantillas descargables: oficios y solicitudes.</li>
+  </ul>
+  <p style="margin-top:1rem;">¿Sugerencias? Escríbenos a <a href="mailto:herenciajusta@gmail.com">herenciajusta@gmail.com</a>.</p>
+</section>
+
+<section class="fade-in" id="quienes">
+<h2>¿Quienes Somos?</h2>
+<p style="text-align:justify;">En Herencia Justa nos organizamos como una iniciativa ciudadana nacida desde la juventud para construir un Ecuador más justo, ético y participativo. Sin ataduras partidistas ni compromisos con el poder, promovemos una ciudadanía activa, crítica y comprometida con la transformación social desde la raíz.</p>
+<p style="text-align:justify;">Apoyamos y promulgamos una nueva forma de hacer política basada en la transparencia, la justicia social, la participación equitativa y el desarrollo territorial con enfoque humano. Nuestro objetivo es despertar el pensamiento crítico, impulsar la organización comunitaria y fortalecer el liderazgo juvenil con visión de futuro.</p>
+</section>
+<section id="quienes-somos" style="padding: 60px 20px; background-color:#fdfdfd;">
+<div style="max-width: 900px; margin: auto;">
+<h2>Conoce más</h2>
+<p style="text-align: justify;">Herencia Justa es un movimiento ciudadano impulsado por jóvenes comprometidos con transformar su país desde los valores, la ética y la participación activa.</p>
+<div style="margin-top: 1.5rem;">
+<a href="#identidad" style="display:inline-block; background-color:#d4af37; color:#0d1b2a; padding:0.7rem 1.5rem; text-decoration:none; border-radius:6px; font-weight:bold;">
+        Ver Misión, Visión y Valores
+      </a>
+</div>
+</div>
+</section>
+<section class="fade-in" id="ofrecemos">
+<h2>Lo que Hacemos</h2>
+<div class="product-grid">
+<div class="product-card">
+<h3>🗣️ Foros Ciudadanos</h3>
+<p style="text-align:justify;">Espacios públicos de diálogo para discutir temas urgentes del país desde la comunidad. Escuchamos, debatimos y construimos propuestas.</p>
+</div>
+<div class="product-card">
+<h3>👁️ Observatorio Cívico</h3>
+<p style="text-align:justify;">Plataforma de vigilancia ciudadana para denunciar injusticias, evaluar autoridades y fomentar la transparencia institucional.</p>
+</div>
+<div class="product-card">
+<h3>📘 Capacitación Política y Social</h3>
+<p style="text-align:justify;">Formación abierta y gratuita sobre derechos constitucionales, liderazgo juvenil, ética política y participación ciudadana efectiva.</p>
+</div>
+<div class="product-card">
+<h3>🌱 Jóvenes con Herencia Justa</h3>
+<p style="text-align:justify;">Programa de impulso a liderazgos jóvenes desde los barrios y comunidades, promoviendo el pensamiento crítico y el activismo social.</p>
+</div>
+</div>
+</section>
+<style>
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeInUp 1s ease-in-out; opacity: 1; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .product-card {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-left: 5px solid #d4af37;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .product-card h3 {
+      font-size: 1.3rem;
+      color: #0d1b2a;
+      margin-bottom: 0.5rem;
+    }
+    .product-card p {
+      font-size: 1rem;
+      color: #333;
+    }
+  </style>
+<section class="fade-in" id="noticias"><h2>Noticias y Temas Relevantes</h2><div class="noticias-grid" id="contenedor-noticias"></div></section>
+<section class="fade-in" id="publica">
+<h2>Publica con Nosotros</h2>
+<p style="text-align:justify;">¿Quieres escribir sobre la realidad política de tu ciudad o país? Envíanos tu artículo bien estructurado y respetuoso al correo <a href="mailto:herenciajusta@gmail.com">herenciajusta@gmail.com</a>.</p>
+</section>
+<section id="boletin">
+<h2>Boletín Mensual</h2>
+<p><strong>Artículos Ciudadanos</strong><br/>
+  Espacio abierto para la reflexión ciudadana. Publicamos artículos con análisis crítico y propuestas para el país.</p>
+  <!-- Contenedor dinámico de artículos. Se poblará desde articulos.json -->
+  <div id="contenedor-articulos"></div>
+  <div style="text-align: center; margin-top: 1rem;">
+    <a class="btn-boletin" href="boletin.html">Ver más artículos del Boletín Mensual</a>
+  </div>
+</section>
+
+<section id="jovenes-herencia" style="background-color:#0f1a2c; color:#fff; padding:60px 30px; background-image: url('img/jovenes-hero.png'); background-size: cover; background-position: center; position: relative;">
+<div style="background-color: rgba(0, 0, 0, 0.6); padding: 40px; border-radius: 15px;">
+<h2 style="color:#00ffcc; text-align:center; font-size: 2.5rem;">Jóvenes con Herencia Justa</h2>
+<p style="text-align:center; font-size: 1.2rem; max-width: 700px; margin: 1rem auto;">Una plataforma de formación gratuita para jóvenes que quieren convertirse en agentes activos del cambio. No es solo un curso: es tu entrada al equipo Herencia Justa.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+<div style="flex: 1 1 300px; background-color: #14213d; padding: 20px; border-radius: 10px;">
+<h3 style="color: #d4af37;">📚 Formación</h3>
+<p style="text-align: justify;">Oratoria, liderazgo, análisis político, comunicación y vigilancia ciudadana con materiales prácticos y clases impactantes.</p>
+</div>
+<div style="flex: 1 1 300px; background-color: #14213d; padding: 20px; border-radius: 10px;">
+<h3 style="color: #d4af37;">🧑‍🏫 Mentoría</h3>
+<p style="text-align: justify;">Aprende directamente de referentes nacionales del derecho, la comunicación y el activismo social.</p>
+</div>
+<div style="flex: 1 1 300px; background-color: #14213d; padding: 20px; border-radius: 10px;">
+<h3 style="color: #d4af37;">🎤 Práctica Real</h3>
+<p style="text-align: justify;">Haz reportes, entrevistas, coberturas ciudadanas. Todo lo que aprendes, lo aplicas desde ya.</p>
+</div>
+</div>
+<h3 style="margin-top:3rem; text-align:center;">🎓 Inscripción 100% gratuita</h3>
+<p style="text-align:center; font-size: 1.05rem;">Tú pones el tiempo y las ganas. Nosotros nos encargamos del resto.</p>
+<h3 style="margin-top:2rem; text-align:center;">🎯 Selección final</h3>
+<p style="text-align:center; font-size: 1.05rem; max-width: 700px; margin: 0 auto;">Al terminar, quienes demuestren compromiso y visión serán parte del equipo Herencia Justa. Es tu oportunidad para actuar, influir y transformar desde dentro.</p>
+<form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST" style="margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+<input name="nombre" placeholder="Tu nombre completo" required="" type="text"/>
+<input name="correo" placeholder="Tu correo electrónico" required="" type="email"/>
+    <input type="text" name="_honey" style="display:none"/>
+    <input type="hidden" name="_captcha" value="false"/>
+<textarea name="motivacion" placeholder="¿Por qué deseas ser parte del programa?" required=""></textarea>
+<input name="_subject" type="hidden" value="Inscripción Programa Jóvenes con Herencia Justa"/>
+<button style="margin-top: 1rem;" type="submit">Unirme al Programa</button>
+</form>
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.getElementById("menu-toggle");
+    const links = document.querySelectorAll("nav a");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        links.forEach(a => a.classList.toggle("show"));
+      });
+    }
+  });
+</script>
+<section id="identidad" style="background-color: #fefefe; padding: 3rem;">
+<h2 style="text-align: center; color: #0d1b2a; font-family: 'Playfair Display', serif;">Nuestra Identidad</h2>
+<hr style="width: 60px; height: 3px; background-color: #d4af37; border: none; margin: 1rem auto 2rem;"/>
+<div class="card">
+<h3>Misión</h3>
+<p>Promover la participación activa y reflexiva de la ciudadanía, especialmente de las juventudes, mediante la vigilancia cívica, la educación política y la formación de liderazgos éticos comprometidos con el bien común.</p>
+</div>
+<div class="card">
+<h3>Visión</h3>
+<p>Consolidarnos como una organización referente en Ecuador en el fortalecimiento de la democracia participativa, el empoderamiento juvenil y el ejercicio ciudadano libre, crítico y solidario.</p>
+</div>
+<div class="card">
+<h3>Valores</h3>
+<ul>
+<li>Ética pública</li>
+<li>Transparencia</li>
+<li>Responsabilidad</li>
+<li>Justicia social</li>
+<li>Participación ciudadana</li>
+<li>Juventud como motor de cambio</li>
+</ul>
+</div>
+<div class="card">
+<h3>Fundadores y Equipo</h3>
+<p>Herencia Justa nace del compromiso de un equipo joven y multidisciplinario, motivado por el deseo de construir una ciudadanía activa, vigilante y constructiva. Nuestro trabajo es colaborativo y transparente, guiado por principios éticos y la convicción de que el cambio empieza por la acción ciudadana.</p>
+</div>
+<div class="card">
+<h3>Compromisos y Transparencia</h3>
+<ul>
+<li>No recibimos financiamiento de partidos políticos ni actores partidistas.</li>
+<li>Publicamos abiertamente nuestras intenciones y principios.</li>
+<li>Rechazamos cualquier forma de manipulación política o clientelar.</li>
+<li>Fomentamos la libertad de expresión y el pensamiento crítico.</li>
+</ul>
+</div>
+</section>
+<section id="hitos" style="background-color: #fefefe; padding: 3rem;">
+<h2 style="text-align: center; color: #0d1b2a; font-family: 'Playfair Display', serif;">Nuestra Proyección</h2>
+<hr style="width: 60px; height: 3px; background-color: #d4af37; border: none; margin: 1rem auto 2rem;"/>
+<div style="max-width: 800px; margin: auto;">
+<div style="margin-bottom: 2rem;">
+<h4 style="color: #0d1b2a;">📍 Mayo 2025</h4>
+<p>Presentación oficial del sitio web de Herencia Justa.</p>
+</div>
+<div style="margin-bottom: 2rem;">
+<h4 style="color: #0d1b2a;">📍 Enero 2026</h4>
+<p>Inicio de foros ciudadanos con enfoque participativo.</p>
+</div>
+<div style="margin-bottom: 2rem;">
+<h4 style="color: #0d1b2a;">📍 Febrero 2026</h4>
+<p>Primera publicación de artículos ciudadanos destacados.</p>
+</div>
+<div style="margin-bottom: 2rem;">
+<h4 style="color: #0d1b2a;">📍 Marzo 2026</h4>
+<p>Lanzamiento del programa de capacitación ciudadana y observación cívica.</p>
+</div>
+<div style="margin-bottom: 2rem;">
+<h4 style="color: #0d1b2a;">📍 Abril 2026</h4>
+<p>Publicación del primer boletín mensual digital “Herencia Justa Informa”.</p>
+</div>
+</div>
+</section>
+<section class="fade-in" id="membresia">
+<h2>Forma parte de nuestra comunidad</h2>
+<p style="text-align:justify;">Creemos en el liderazgo ético y en la construcción colectiva. Si compartes nuestra visión y quieres ser parte activa del cambio, conoce los tipos de membresía y cómo participar en Herencia Justa.</p>
+<div style="text-align: center; margin-top: 2rem;">
+<a class="btn-boletin" href="membresias.html">Conoce nuestras Membresías</a>
+</div>
+</section>
+<section id="contacto" style="background-color: #f8f8f8; padding: 3rem;">
+<h2 style="text-align: center; color: #0d1b2a; font-family: 'Playfair Display', serif;">Contáctanos</h2>
+<hr style="width: 60px; height: 3px; background-color: #d4af37; border: none; margin: 1rem auto 2rem;"/>
+<p style="text-align: center;">Si deseas unirte a nuestro proyecto o compartir tus ideas, puedes escribirnos a <a href="mailto:herenciajusta@gmail.com">herenciajusta@gmail.com</a></p>
+<p style="text-align: center;">También puedes sugerir temas o hacernos preguntas usando el siguiente formulario:</p>
+<form style="max-width: 600px; margin: auto;">
+<label for="mensaje">Tu sugerencia o pregunta:</label><br/>
+<textarea id="mensaje" name="mensaje" rows="4" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea><br/>
+    <input type="text" name="_honey" style="display:none"/>
+    <input type="hidden" name="_captcha" value="false"/>
+<button style="background-color: #d4af37; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px;" type="submit">Enviar</button>
+</form>
+</section>
+<section id="termometro" style="padding: 3rem; background-color: #ffffff;">
+<h2 style="text-align: center;">¿Cómo te sientes respecto al país hoy?</h2>
+<p style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">
+    Tu opinión importa. Este termómetro ciudadano nos ayuda a medir el estado de ánimo de la juventud frente a la realidad nacional.
+  </p>
+<div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+<button class="emocion" data-reaccion="enojo">😡 Molesto</button>
+<button class="emocion" data-reaccion="indiferente">😐 Indiferente</button>
+<button class="emocion" data-reaccion="esperanza">🙂 Esperanzado</button>
+<button class="emocion" data-reaccion="compromiso">🤝 Comprometido</button>
+<button class="emocion" data-reaccion="decepcion">🥲 Decepcionado</button>
+</div>
+<p id="confirmacion" style="text-align: center; margin-top: 2rem; font-weight: bold;"></p>
+</section>
+<style>
+  .emocion {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #d4af37;
+    color: #0d1b2a;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .emocion:hover {
+    transform: scale(1.05);
+    background-color: #c29d30;
+  }
+</style>
+<script>
+  const botones = document.querySelectorAll('.emocion');
+  const mensaje = document.getElementById('confirmacion');
+
+  botones.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const emocion = btn.dataset.reaccion;
+      fetch("https://v1.nocodeapi.com/herenciajusta/google_sheets/mABoMwFdlXBkTXSw?tabId=Hoja1", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([[emocion, new Date().toISOString()]])
+      })
+      .then(() => {
+        mensaje.innerText = "✅ ¡Gracias! Tu voto ha sido registrado.";
+      })
+      .catch(() => {
+        mensaje.innerText = "⚠️ Ocurrió un error. Intenta de nuevo.";
+      });
+    });
+  });
+</script>
+<footer>
+<p style="">Herencia Justa es una propuesta ciudadana e iniciativa juvenil de reflexión política. No representa a un movimiento político registrado ante el Consejo Nacional Electoral.</p>
+<p style="">© 2025 Herencia Justa. Todos los derechos reservados.</p>
+</footer>
+<script>
+  // Carga un listado reducido de artículos desde articulos.json y muestra los dos primeros en la sección boletín
+  fetch('articulos.json', { cache: 'no-store' })
+    .then(res => res.json())
+    .then(arts => {
+      const contenedor = document.getElementById('contenedor-articulos');
+      if (!contenedor) return;
+      contenedor.innerHTML = '';
+      // Mostrar sólo los primeros dos artículos para la portada
+      arts.slice(0, 2).forEach(art => {
+        const card = document.createElement('div');
+        card.className = 'articulo';
+        // Elemento visual: imagen o placeholder con la inicial del título
+        const visual = art.imagen
+          ? `<img loading="lazy" src="${art.imagen}" alt="${art.titulo}" style="width: 100%; border-radius: 6px; margin-bottom: 0.5rem; max-height: 200px; object-fit: cover;">`
+          : `<div style="width:100%; height:200px; background-color:#14213d; color:#d4af37; display:flex; align-items:center; justify-content:center; font-size:3rem; font-weight:bold; text-transform:uppercase; border-radius:6px; margin-bottom:0.5rem;">${art.titulo.charAt(0)}</div>`;
+        card.innerHTML = `
+          ${visual}
+          <h3 style="color:#0d1b2a;">${art.titulo}</h3>
+          <p><em>Por: ${art.autor}</em></p>
+          <p>${art.resumen || ''}</p>
+        `;
+        contenedor.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error('Error al cargar articulos.json', err);
+    });
+</script>
+
+<script>
+(function(){
+  const url = 'noticias.json';
+
+  function normalizeUrl(u) {
+    if (!u || typeof u !== 'string') return null;
+    const trimmed = u.trim();
+    const lowered = trimmed.toLowerCase();
+    if (lowered.startsWith('javascript:') || lowered.startsWith('data:')) return null;
+    if (trimmed.startsWith('/')) return trimmed;
+    if (/^https?:\/\//i.test(trimmed)) return trimmed;
+    if (/^([\w-]+\.)+[\w-]+(\/.*)?$/.test(trimmed)) {
+      return 'https://' + trimmed;
+    }
+    return null;
+  }
+
+  fetch(url, { cache: 'no-store' })
+    .then(res => res.json())
+    .then(noticias => {
+      const contenedor = document.getElementById('contenedor-noticias');
+      if(!contenedor) return;
+      contenedor.innerHTML = '';
+      noticias.forEach(n => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        // Construir elementos de la tarjeta de forma dinámica
+        // Asigna loading="lazy" para que las imágenes de las noticias se carguen sólo cuando se acercan al viewport
+        const imagen = n.imagen ? `<img loading="lazy" src="${n.imagen}" alt="${n.titulo || ''}">` : ``;
+        const meta = (n.fuente || n.autor || n.fecha) ? `<p class="meta">${(n.fecha || '')}${(n.fuente || n.autor) ? ' • ' + (n.fuente || n.autor) : ''}</p>` : ``;
+        const fullText = (n.contenido || n.bajada || '').trim();
+        const excerpt = fullText.length > 160 ? fullText.slice(0, 160).trimEnd() + '…' : fullText;
+        const link = normalizeUrl(n.url);
+        const enlaceFuente = link ? `<p style="margin-top:.4rem;"><a href="${link}" target="_blank" rel="noopener noreferrer nofollow" style="color:#0d1b2a; text-decoration:underline;">Ir a la fuente</a></p>` : ``;
+        card.innerHTML = `
+          ${imagen}
+          <h3>${n.titulo || ''}</h3>
+          ${meta}
+          <p class="excerpt">${excerpt}</p>
+          <div class="full-content">
+            <p>${fullText}</p>
+            ${enlaceFuente}
+          </div>
+          <button class="btn-leer-mas" type="button">Leer más</button>
+        `;
+        // Agregar evento para mostrar/ocultar el contenido completo
+        const btn = card.querySelector('.btn-leer-mas');
+        const full = card.querySelector('.full-content');
+        btn.addEventListener('click', () => {
+          const isOpen = full.style.display !== 'none';
+          if (isOpen) {
+            full.style.display = 'none';
+            btn.textContent = 'Leer más';
+          } else {
+            full.style.display = 'block';
+            btn.textContent = 'Leer menos';
+          }
+        });
+        contenedor.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error('Error al cargar noticias:', err);
+      const contenedor = document.getElementById('contenedor-noticias');
+      if(!contenedor) return;
+      contenedor.innerHTML = '<p style="color:#666;">No pudimos cargar las noticias por ahora.</p>';
+    });
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
