@@ -726,11 +726,17 @@
 <hr style="width: 60px; height: 3px; background-color: #d4af37; border: none; margin: 1rem auto 2rem;"/>
 <p style="text-align: center;">Si deseas unirte a nuestro proyecto o compartir tus ideas, puedes escribirnos a <a href="mailto:herenciajusta@gmail.com">herenciajusta@gmail.com</a></p>
 <p style="text-align: center;">También puedes sugerir temas o hacernos preguntas usando el siguiente formulario:</p>
-<form style="max-width: 600px; margin: auto;">
-<label for="mensaje">Tu sugerencia o pregunta:</label><br/>
-<textarea id="mensaje" name="mensaje" rows="4" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea><br/>
-    <input type="text" name="_honey" style="display:none"/>
+<form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST" style="max-width: 600px; margin: auto;">
+  <label for="nombre">Tu nombre:</label><br/>
+  <input id="nombre" name="nombre" placeholder="Tu nombre" required/><br/>
+  <label for="correo">Correo electrónico:</label><br/>
+  <input id="correo" name="correo" placeholder="tuemail@example.com" type="email" required/><br/>
+  <label for="mensaje">Tu sugerencia o pregunta:</label><br/>
+  <textarea id="mensaje" name="mensaje" rows="4" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" required></textarea><br/>
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde Herencia Justa"/>
+    <input type="hidden" name="_next" value="https://herenciajustaec.com/gracias.html"/>
     <input type="hidden" name="_captcha" value="false"/>
+    <input type="text" name="_honey" style="display:none"/>
 <button style="background-color: #d4af37; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px;" type="submit">Enviar</button>
 </form>
 </section>
