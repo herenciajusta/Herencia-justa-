@@ -1,22 +1,18 @@
 [
   {
-    "id": "participacion_juvenil",
     "titulo": "La participación juvenil y su impacto en Cuenca",
+    "fecha": "2025-04-30",
     "autor": "J. Peñafiel",
-    "fecha": "2025-05-01",
-    "imagen": "articulo1.png",
+    "categoria": "Social",
     "resumen": "Un recorrido sobre cómo los jóvenes han empezado a influir en los procesos locales y el despertar de una nueva conciencia social.",
-    "contenido": "<p>La participación de la juventud cuencana ha tomado fuerza en los últimos años. Desde la creación de colectivos estudiantiles hasta la organización de cabildos barriales, los jóvenes están demostrando que pueden ser protagonistas en la toma de decisiones. Este artículo analiza iniciativas locales y reflexiona sobre cómo canalizar ese despertar ciudadano en una agenda real de política pública.</p>",
-    "categoria": "Juventud"
+    "pdf": "docs/participacion_juvenil_cuenca.pdf"
   },
   {
-    "id": "gads_transparencia",
     "titulo": "Los GADs frente al desafío de la transparencia",
+    "fecha": "2025-05-09",
     "autor": "M. Granda",
-    "fecha": "2025-05-10",
-    "imagen": "articulo2.png",
+    "categoria": "Jurídico",
     "resumen": "Una mirada jurídica sobre la obligación de rendición de cuentas por parte de las autoridades cantonales.",
-    "contenido": "<p>La Constitución y las leyes exigen a los gobiernos autónomos descentralizados (GADs) transparentar sus procesos, gastos y decisiones. No obstante, muchos municipios aún presentan resistencia a publicar información. Este artículo examina la normativa vigente, presenta casos de éxito y plantea recomendaciones para fortalecer la auditoría ciudadana sobre los GADs.</p>",
-    "categoria": "Transparencia"
+    "pdf": "docs/gads_desafio_transparencia.pdf"
   }
 ]
