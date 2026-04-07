@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enviar Denuncia - Herencia Justa</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Lora', serif;
+  background-color:#f2f4f8;
+  color:#1b263b;
+  line-height:1.6;
+  margin:0;
+}
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.1);
+}
+h1 {
+  color:#0d1b2a;
+  margin-bottom:1rem;
+}
+label {
+  display:block;
+  margin-top:1rem;
+  font-weight:600;
+}
+input, textarea, select {
+  width:100%;
+  padding:0.8rem;
+  margin-top:0.5rem;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-family:'Lora', serif;
+}
+button {
+  background-color:#d4af37;
+  color:#0d1b2a;
+  padding:0.8rem 1.5rem;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:1.5rem;
+}
+button:hover { background-color:#c39c2a; }
+.notice {
+  margin-top:2rem;
+  border-left:5px solid #d4af37;
+  padding:1rem 1rem 1rem 1.2rem;
+  background-color:#fbfbfb;
+  border-radius:6px;
+}
+.notice strong { color:#0d1b2a; }
+details {
+  margin-top:2rem;
+  background-color:#f8f8f8;
+  border:1px solid #e6e6e6;
+  border-radius:8px;
+  padding:1rem;
+}
+.radio-group {
+  display:flex;
+  gap:1.25rem;
+  flex-wrap:wrap;
+  margin-top:.75rem;
+}
+.radio-option {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  background:#fafafa;
+  border:1px solid #ddd;
+  padding:.7rem 1rem;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:400;
+  min-width:110px;
+}
+.radio-option input {
+  width:auto;
+  margin:0;
+}
+.help-text {
+  margin-top:.6rem;
+  color:#555;
+  font-size:.95rem;
+}
+.top-actions {
+  margin-top:1rem;
+}
+.top-actions a {
+  color:#d4af37;
+  font-weight:bold;
+  text-decoration:none;
+}
+.top-actions a:hover {
+  text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top-actions"><a href="index.html#denuncias">← Volver a Denuncias Ciudadanas</a></div>
+  <h1>Enviar Denuncia Ciudadana</h1>
+  <p>Utiliza este formulario para enviar tu denuncia ciudadana. Los datos personales serán tratados con estricta confidencialidad y solo serán utilizados para fines de verificación o contacto editorial.</p>
+
+  <form method="POST" action="https://formsubmit.co/herenciajusta@gmail.com" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Nueva denuncia ciudadana">
+    <input type="hidden" name="_next" value="https://herenciajustaec.com/gracias-denuncias.html">
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_template" value="table">
+
+    <label for="nombre">Tu nombre (opcional)</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="correo">Correo electrónico (opcional)</label>
+    <input type="email" id="correo" name="correo">
+
+    <label for="tipo">Tipo de denuncia</label>
+    <select id="tipo" name="tipo" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Servicio público deficiente">Servicio público deficiente</option>
+      <option value="Presunta corrupción">Presunta corrupción</option>
+      <option value="Omisión de autoridad">Omisión de autoridad</option>
+      <option value="Abuso de poder">Abuso de poder</option>
+      <option value="Vulneración de derechos">Vulneración de derechos</option>
+      <option value="Otro">Otro</option>
+    </select>
+
+    <label for="descripcion">Descripción de los hechos</label>
+    <textarea id="descripcion" name="descripcion" rows="6" placeholder="Describe de manera detallada los hechos..." required></textarea>
+
+    <label>¿Ha presentado esta denuncia ante alguna autoridad?</label>
+    <div class="radio-group">
+      <label class="radio-option" for="gestiones-si">
+        <input type="radio" id="gestiones-si" name="gestiones" value="Sí">
+        <span>Sí</span>
+      </label>
+      <label class="radio-option" for="gestiones-no">
+        <input type="radio" id="gestiones-no" name="gestiones" value="No" checked>
+        <span>No</span>
+      </label>
+    </div>
+
+    <label for="archivo">Adjuntar archivos (opcional)</label>
+    <input type="file" id="archivo" name="attachment" accept="image/png,image/jpeg,application/pdf">
+    <p class="help-text">Puedes adjuntar oficios, respuestas, fotos o capturas. El tamaño total admitido por FormSubmit no debe superar 5 MB.</p>
+
+    <button type="submit">Enviar denuncia</button>
+  </form>
+
+  <div class="notice">
+    <p><strong>Advertencia editorial</strong></p>
+    <p>Herencia Justa actúa como canal de difusión ciudadana. La información publicada corresponde a una denuncia ciudadana y no constituye una declaración de responsabilidad ni una conclusión judicial. Herencia Justa no emite juicios de responsabilidad ni reemplaza a las autoridades competentes.</p>
+  </div>
+
+  <details id="proceso">
+    <summary><strong>¿Cómo verificamos?</strong></summary>
+    <ul style="margin-top:1rem;">
+      <li><strong>Confidencialidad:</strong> Resguardamos la identidad de la persona denunciante y solo la usamos para contrastar la información cuando sea necesario.</li>
+      <li><strong>Clasificación:</strong> La denuncia se clasifica según su naturaleza.</li>
+      <li><strong>Documentación:</strong> Revisamos los documentos y evidencias adjuntas para evaluar la consistencia del relato.</li>
+      <li><strong>Contexto:</strong> Contrastamos la información con fuentes públicas y, de ser necesario, pedimos versión a la institución señalada.</li>
+      <li><strong>Relevancia:</strong> Evaluamos si los hechos denunciados impactan al interés público y cumplen con nuestros principios editoriales.</li>
+      <li><strong>Publicación:</strong> Si se publica, se hace como denuncia ciudadana, sin presentarla como sentencia ni conclusión judicial.</li>
+    </ul>
+  </details>
+</div>
+</body>
+</html>
