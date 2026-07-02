@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Derecho Justo Ahora | Herencia Justa</title>
+  <!-- Carga las tipografías de marca -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Carga de Font Awesome para iconos en beneficios y pasos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dx1X1F5ia+N5poWZ3GXrYaGxI09y9VDJH+Fh2TGcfCkqLNYbUzYw78RquQhZ+SMJvofH7WbDL1M5NcxFwe6k5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --hj-navy: #0d1b2a;
+      --hj-blue: #14213d;
+      --hj-gold: #d4af37;
+      --hj-light: #fefefe;
+      --hj-muted: #607086;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', 'Lora', serif;
+      /* Agrega un patrón sutil al fondo para decorar los márgenes y evitar áreas blancas planas */
+      background: linear-gradient(180deg, #f7f8fb 0%, #eef2f7 100%);
+      color: var(--hj-navy);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* Patrón decorativo global: dos gradientes radiales para aportar textura a los fondos blancos */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(600px 300px at 20% 30%, rgba(212, 175, 55, 0.07), transparent 60%),
+        radial-gradient(600px 300px at 80% 80%, rgba(20, 33, 61, 0.05), transparent 60%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    a { text-decoration: none; color: inherit; }
+    header {
+      background: linear-gradient(135deg, var(--hj-navy), var(--hj-blue));
+      color: var(--hj-light);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--hj-light);
+      font-weight: 600;
+      padding: 0.4rem 0.7rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: var(--hj-gold);
+    }
+    /* Hero principal */
+    .hero {
+      /* Reemplazamos el fondo por la foto de Cuenca y ajustamos el degradado para que la imagen sea más visible */
+      background:
+        linear-gradient(130deg, rgba(13,27,42,0.45), rgba(27,38,59,0.25)),
+        url('1234.jpg') center/cover no-repeat;
+      color: var(--hj-light);
+      padding: 6rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-family: 'Lora', serif;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      max-width: 760px;
+      margin: 1rem auto;
+    }
+    .hero .btn-group {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.6rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--hj-gold);
+      color: var(--hj-navy);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--hj-gold);
+      color: var(--hj-gold);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    /* Sección de beneficios */
+.beneficios {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      /* Integramos un patrón radial sutil para decorar esta sección y evitar áreas totalmente blancas */
+      background:
+        linear-gradient(180deg, #fdfdfd 0%, #f8fafd 100%),
+        radial-gradient(500px 250px at 90% 10%, rgba(212, 175, 55, 0.05), transparent 70%),
+        radial-gradient(600px 300px at 10% 90%, rgba(20, 33, 61, 0.04), transparent 60%);
+    }
+    .beneficios h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--hj-navy);
+    }
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .beneficio {
+      background: #ffffff;
+      border-left: 4px solid var(--hj-gold);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .beneficio:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+    }
+    .beneficio h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--hj-navy);
+    }
+    .beneficio p {
+      font-size: 1rem;
+      color: var(--hj-muted);
+    }
+    /* Sección Cómo funciona */
+    .como-funciona {
+      padding: 4rem 1rem;
+      /* Sustituimos el fondo plano por un degradado suave y patrones radiales para añadir dimensión */
+      background:
+        linear-gradient(180deg, #fdfdfd 0%, #f8fafd 100%),
+        radial-gradient(500px 250px at 90% 10%, rgba(212, 175, 55, 0.05), transparent 70%),
+        radial-gradient(600px 300px at 10% 90%, rgba(20, 33, 61, 0.04), transparent 60%);
+      position: relative;
+    }
+    .como-funciona h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2rem;
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      align-items: start;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .timeline-step {
+      position: relative;
+      padding-top: 3rem;
+      text-align: center;
+    }
+    .timeline-step::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: var(--hj-gold);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .timeline-step::after {
+      content: '';
+      width: 2px;
+      height: 60px;
+      background: var(--hj-gold);
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .timeline-step:last-child::after {
+      display: none;
+    }
+    .timeline-step h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: var(--hj-navy);
+      font-weight: 700;
+    }
+    .timeline-step p {
+      font-size: 0.95rem;
+      color: var(--hj-muted);
+    }
+    /* Sección ¿En qué podemos ayudarte? */
+    .problemas {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+      /* Patrón decorativo para problemas comunes */
+      background:
+        linear-gradient(180deg, #fdfdfd 0%, #f8fafd 100%),
+        radial-gradient(500px 250px at 90% 10%, rgba(212, 175, 55, 0.05), transparent 70%),
+        radial-gradient(600px 300px at 10% 90%, rgba(20, 33, 61, 0.04), transparent 60%);
+    }
+    .problemas h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .problemas-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .problema {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--hj-gold);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .problema-icon {
+      font-size: 1.6rem;
+      color: var(--hj-gold);
+      flex-shrink: 0;
+    }
+    .problema-text {
+      font-size: 1rem;
+      color: var(--hj-navy);
+    }
+    /* Sección video principal */
+    .video-section {
+      padding: 4rem 1rem;
+      /* Integramos patrón y degradado en la sección de video */
+      background:
+        linear-gradient(180deg, #fdfdfd 0%, #f8fafd 100%),
+        radial-gradient(500px 250px at 90% 10%, rgba(212, 175, 55, 0.05), transparent 70%),
+        radial-gradient(600px 300px at 10% 90%, rgba(20, 33, 61, 0.04), transparent 60%);
+      text-align: center;
+    }
+    .video-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .video-placeholder {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin: 0 auto;
+      background: #e6e8ec;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    /* Sección formulario */
+    .form-section {
+      padding: 4rem 1rem;
+      max-width: 800px;
+      margin: auto;
+      /* Sección de formulario con fondo decorativo suave */
+      background:
+        linear-gradient(180deg, #fdfdfd 0%, #f8fafd 100%),
+        radial-gradient(500px 250px at 90% 10%, rgba(212, 175, 55, 0.05), transparent 70%),
+        radial-gradient(600px 300px at 10% 90%, rgba(20, 33, 61, 0.04), transparent 60%);
+    }
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+    form input,
+    form textarea {
+      padding: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Inter', 'Lora', serif;
+      font-size: 1rem;
+    }
+    form button {
+      background: var(--hj-gold);
+      color: var(--hj-navy);
+      border: none;
+      padding: 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    form button:hover {
+      transform: translateY(-2px);
+    }
+    /* FAQ */
+    .faq-section {
+      padding: 4rem 1rem;
+      max-width: 800px;
+      margin: auto;
+      /* Agregamos un fondo con patrones y degradado manteniendo la caja y el sombreado */
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f8fafd 100%),
+        radial-gradient(500px 250px at 90% 10%, rgba(212, 175, 55, 0.05), transparent 70%),
+        radial-gradient(600px 300px at 10% 90%, rgba(20, 33, 61, 0.04), transparent 60%);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.75rem 0;
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+    }
+    .faq-item[open] summary::after {
+      content: '–';
+    }
+    .faq-item p {
+      padding: 0 0 0.75rem 0;
+      color: var(--hj-muted);
+    }
+    /* Cierre */
+    .cierre {
+      text-align: center;
+      padding: 4rem 1rem;
+      /* Sección de cierre con degradado y patrones decorativos */
+      background:
+        linear-gradient(180deg, #fdfdfd 0%, #f8fafd 100%),
+        radial-gradient(500px 250px at 90% 10%, rgba(212, 175, 55, 0.05), transparent 70%),
+        radial-gradient(600px 300px at 10% 90%, rgba(20, 33, 61, 0.04), transparent 60%);
+    }
+    .cierre h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--hj-navy);
+    }
+    .cierre p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--hj-muted);
+    }
+    /* Footer */
+    footer {
+      background-color: var(--hj-navy);
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    footer a { color: var(--hj-gold); text-decoration: underline; }
+
+    /* Separador ondulado entre secciones. Utilizamos el mismo motivo de onda que en el index */
+    .wave-separator svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* -----------------------------------------------------------------
+       Sección de hero dinámica (presentación tipo "slide deck")
+
+       Para modernizar la entrada de la página "Tu Derecho Justo Ahora"
+       implementamos un carrusel de diapositivas que se comporta como una
+       presentación de PowerPoint. Cada diapositiva tiene su propio
+       mensaje y un botón de llamada a la acción. Las diapositivas se
+       superponen y se alternan mediante animaciones de opacidad y
+       posición. Si se añaden más diapositivas en el HTML, el script
+       detectará automáticamente cuántas hay y las rotará en bucle.
+
+       - .hero-slideshow: contenedor principal con posición relativa y
+         altura generosa para destacar. Utiliza flexbox para centrar
+         vertical y horizontalmente el contenido.
+       - .slide: cada diapositiva está posicionada absolutamente para
+         ocupar todo el contenedor y parte invisible por defecto.
+       - .slide.active: diapositiva visible con opacidad 1 y sin
+         desplazamiento vertical.
+       - h2, p y .cta: estilos tipográficos y de botones coherentes con
+         la identidad de Herencia Justa.
+    ----------------------------------------------------------------- */
+    .hero-slideshow {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Fondo degradado suave para que los textos tengan contraste */
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafd 100%);
+    }
+    .hero-slideshow .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+      padding: 0 1.5rem;
+      /* Fondo semi-transparente para que el texto destaque si se usa una imagen de fondo personalizada */
+      background: rgba(255, 255, 255, 0.85);
+      box-sizing: border-box;
+    }
+    .hero-slideshow .slide.active {
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 1;
+    }
+    .hero-slideshow .slide h2 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--hj-navy);
+    }
+    .hero-slideshow .slide p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      color: var(--hj-muted);
+    }
+    .hero-slideshow .slide .cta {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background-color: var(--hj-gold);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .hero-slideshow .slide .cta:hover {
+      background-color: #bfa23c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Herencia Justa_ Valor y Legado.png" alt="Herencia Justa Logo">
+      Tu Derecho Justo Ahora
+    </div>
+    <nav>
+      <ul>
+        <!-- Enlace a la página principal. Ajustamos el nombre de archivo para que apunte al index actualizado -->
+        <li><a href="index(27).html">Inicio</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#problemas">En qué te ayudamos</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#formulario">Consulta gratis</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero dinámico estilo presentación -->
+    <section class="hero-slideshow">
+      <div class="slide active">
+        <h2>¿Tienes un problema legal?</h2>
+        <p>No sabes por dónde empezar? Nosotros te guiamos paso a paso.</p>
+        <a href="#beneficios" class="cta">Descubre más</a>
+      </div>
+      <div class="slide">
+        <h2>Consulta virtual gratuita</h2>
+        <p>Recibe una orientación inicial sin costo desde cualquier lugar.</p>
+        <a href="#formulario" class="cta">Cuéntanos tu caso</a>
+      </div>
+      <div class="slide">
+        <h2>Tarifas preferenciales</h2>
+        <p>Disfruta de descuentos exclusivos al venir por Herencia&nbsp;Justa.</p>
+        <a href="#beneficios" class="cta">Ver detalles</a>
+      </div>
+      <div class="slide">
+        <h2>Respaldo profesional</h2>
+        <p>Un estudio jurídico aliado con ética y experiencia te respalda.</p>
+        <a href="#formulario" class="cta">Solicita asistencia</a>
+      </div>
+      <div class="slide">
+        <h2>Da el primer paso</h2>
+        <p>Acércate a una solución justa y profesional. Estamos listos para ayudarte.</p>
+        <a href="#formulario" class="cta">Solicita tu consulta</a>
+      </div>
+    </section>
+
+  <!-- Separador ondulado entre el hero y el resto de la página -->
+  <div class="wave-separator" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+      <path d="M0,46 C220,100 360,0 570,44 C780,88 900,70 1080,35 C1240,4 1340,20 1440,52 L1440,90 L0,90 Z" fill="#f2f4f8"></path>
+      <path d="M0,48 C220,96 360,8 570,46 C780,84 900,72 1080,38 C1240,10 1340,24 1440,54" fill="none" stroke="#d4af37" stroke-width="3" opacity=".65"></path>
+    </svg>
+  </div>
+    <!-- Tres beneficios principales -->
+    <section class="beneficios" id="beneficios">
+      <h2>Por qué elegirnos</h2>
+      <div class="beneficios-grid">
+        <div class="beneficio">
+          <div class="beneficio-icon" style="font-size:2rem; color:var(--hj-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-comments"></i></div>
+          <h3>Consulta virtual gratuita</h3>
+          <p>Recibe orientación sin costo y obtén respuestas claras desde la comodidad de tu hogar.</p>
+        </div>
+        <div class="beneficio">
+          <div class="beneficio-icon" style="font-size:2rem; color:var(--hj-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-tags"></i></div>
+          <h3>Tarifa preferencial</h3>
+          <p>Descuentos especiales en la representación presencial para quienes llegan por Herencia&nbsp;Justa.</p>
+        </div>
+        <div class="beneficio">
+          <div class="beneficio-icon" style="font-size:2rem; color:var(--hj-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-gavel"></i></div>
+          <h3>Respaldo profesional</h3>
+          <p>Un estudio jurídico aliado y ético respalda tu caso en todo momento.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Cómo funciona -->
+    <section class="como-funciona" id="como-funciona">
+      <h2>¿Cómo funciona?</h2>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="step-icon" style="font-size:2rem; color:var(--hj-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-comment-dots"></i></div>
+          <h4>Cuéntanos qué pasó</h4>
+          <p>Completa el formulario con los detalles de tu caso.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-icon" style="font-size:2rem; color:var(--hj-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h4>Analizamos tu situación</h4>
+          <p>Revisamos tu caso y definimos el mejor camino a seguir.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-icon" style="font-size:2rem; color:var(--hj-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-comments"></i></div>
+          <h4>Recibe orientación</h4>
+          <p>Te enviamos una respuesta clara y recomendaciones iniciales.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-icon" style="font-size:2rem; color:var(--hj-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-handshake"></i></div>
+          <h4>Agenda tu cita</h4>
+          <p>Accede a representación presencial con tarifa preferencial.</p>
+        </div>
+      </div>
+    </section>
+    <!-- ¿En qué podemos ayudarte? -->
+    <section class="problemas" id="problemas">
+      <h2>¿En qué podemos ayudarte?</h2>
+      <div class="problemas-list">
+        <div class="problema">
+          <span class="problema-icon">💼</span>
+          <span class="problema-text">Me despidieron</span>
+        </div>
+        <div class="problema">
+          <span class="problema-icon">🏠</span>
+          <span class="problema-text">Tengo un problema con una herencia</span>
+        </div>
+        <div class="problema">
+          <span class="problema-icon">🏡</span>
+          <span class="problema-text">Mi arrendador incumplió</span>
+        </div>
+        <div class="problema">
+          <span class="problema-icon">🍽️</span>
+          <span class="problema-text">Alimentos y pensión</span>
+        </div>
+        <div class="problema">
+          <span class="problema-icon">📄</span>
+          <span class="problema-text">Contratos y deudas</span>
+        </div>
+        <div class="problema">
+          <span class="problema-icon">⚠️</span>
+          <span class="problema-text">Estafas y fraudes</span>
+        </div>
+      </div>
+    </section>
+    <!-- Video principal -->
+    <section class="video-section" id="video">
+      <h2>¿Por qué nació Tu Derecho Justo Ahora?</h2>
+      <!-- Contenedor de video con superposición de icono de reproducción. Se puede enlazar a un video real sustituyendo el vínculo del botón. -->
+      <div class="video-placeholder" style="position:relative; cursor:pointer;">
+        <img src="placeholder_light_gray_block.png" alt="Video explicativo" loading="lazy" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+        <a href="https://www.youtube.com/watch?v=" target="_blank" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:4rem; color:var(--hj-gold); text-decoration:none;">
+          <i class="fa-solid fa-circle-play"></i>
+        </a>
+      </div>
+      <p style="margin-top: 1rem; font-style: italic;">Mira el trailer oficial (1 minuto) y descubre cómo funciona nuestro servicio.</p>
+    </section>
+    <!-- Formulario -->
+    <section class="form-section" id="formulario">
+      <h2>Cuéntanos tu caso</h2>
+      <p style="text-align:center; max-width:650px; margin: 0 auto 2rem;">Completa el formulario y nuestro equipo se pondrá en contacto contigo. Las consultas virtuales son 100% gratuitas. Las citas presenciales tienen tarifas preferenciales cuando vienes por Herencia Justa.</p>
+      <form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="text" name="whatsapp" placeholder="Número de WhatsApp" required>
+        <input type="email" name="correo" placeholder="Correo electrónico">
+        <textarea name="mensaje" placeholder="Cuéntanos qué ocurrió" rows="4" required></textarea>
+        <!-- Formsubmit hidden fields for anti-bot and subject -->
+        <input type="hidden" name="_subject" value="Nueva consulta legal desde Tu Derecho Justo Ahora">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit">Enviar mi caso</button>
+      </form>
+    </section>
+    <!-- Preguntas frecuentes -->
+    <section class="faq-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta la consulta virtual?</summary>
+        <p>La consulta virtual inicial es totalmente gratuita. Solo necesitas enviar tu caso a través del formulario y te daremos una orientación sin costo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo funciona la tarifa preferencial?</summary>
+        <p>Si necesitas representación legal presencial, nuestros aliados ofrecen descuentos especiales a todas las personas que llegaron a través de Herencia Justa.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Quién revisa mi caso?</summary>
+        <p>Un equipo de abogados experimentados y nuestro estudio jurídico aliado. Evaluamos tu situación de manera confidencial y profesional.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿En qué territorio ofrecen el servicio?</summary>
+        <p>Atendemos casos de todo Ecuador a través de consultas virtuales. Las citas presenciales se coordinan según disponibilidad en Cuenca y otras ciudades.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa con mis datos?</summary>
+        <p>Tu información se maneja de forma confidencial y sólo se utiliza para responder a tu consulta. No se comparte con terceros sin tu consentimiento.</p>
+      </details>
+    </section>
+    <!-- Cierre -->
+    <section class="cierre">
+      <h2>No tienes que enfrentar tu problema solo</h2>
+      <p>Estamos aquí para escucharte y orientarte. Da el primer paso hacia una solución justa y profesional.</p>
+      <a href="#formulario" class="btn btn-primary">Cuéntanos tu caso</a>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Herencia Justa. Todos los derechos reservados.</p>
+    <p>Herencia Justa es una iniciativa ciudadana juvenil independiente. Las consultas en línea no constituyen asesoría legal formal ni crean una relación abogado-cliente. <a href="legal.html">Política de privacidad y términos</a>.</p>
+  </footer>
+
+  <!-- Script para rotar las diapositivas del héroe.
+       Este JavaScript recorre las diapositivas de la sección hero-slideshow
+       aplicando y quitando la clase 'active' cada 6 segundos. Se ejecuta
+       únicamente cuando hay más de una diapositiva definida en el HTML. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slides = document.querySelectorAll('.hero-slideshow .slide');
+      let currentIndex = 0;
+      if (slides.length > 0) {
+        // Asegura que solo la primera diapositiva esté activa inicialmente
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle('active', idx === 0);
+        });
+        setInterval(() => {
+          slides[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add('active');
+        }, 6000);
+      }
+    });
+  </script>
+</body>
+</html>
