@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Derecho Justo Ahora | Herencia Justa</title>
+  <meta name="description" content="Tu Derecho Justo Ahora: consulta virtual gratuita, tarifas preferenciales y respaldo de un estudio jurídico aliado.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    :root{
+      --navy:#071624;
+      --navy-2:#0e2338;
+      --gold:#d4af37;
+      --gold-soft:rgba(212,175,55,.14);
+      --text:#102033;
+      --muted:#6b788a;
+      --white:#fff;
+      --paper:#f3f7fb;
+      --shadow:0 24px 50px rgba(7,22,36,.16);
+      --radius:30px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(212,175,55,.09), transparent 26%),
+        radial-gradient(circle at 90% 90%, rgba(14,35,56,.08), transparent 22%),
+        linear-gradient(180deg,#f8fafc 0%,#eef3f8 100%);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .site-nav{
+      position:sticky;top:0;z-index:1000;background:linear-gradient(135deg, rgba(7,22,36,.96), rgba(11,30,49,.94));
+      backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.24);box-shadow:0 10px 28px rgba(7,22,36,.18)
+    }
+    .nav-inner{max-width:1320px;margin:0 auto;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.8rem;color:#fff;font-weight:800}
+    .brand img{width:42px;height:42px;object-fit:contain}
+    .menu-toggle{display:none;border:none;background:transparent;color:#fff;font-size:1.45rem;cursor:pointer}
+    .nav-links{display:flex;gap:.35rem;list-style:none;align-items:center;flex-wrap:wrap}
+    .nav-links a{color:#fff;padding:.65rem .9rem;border-radius:999px;font-weight:600;transition:.25s ease}
+    .nav-links a:hover{background:rgba(255,255,255,.07)}
+    .nav-links .pill{border:1px solid rgba(212,175,55,.45);background:rgba(212,175,55,.08);color:#f3d46c}
+
+    .hero-shell{
+      position:relative;overflow:hidden;padding:2rem 1.1rem 3rem;
+      background:linear-gradient(180deg, rgba(7,22,36,.08), rgba(7,22,36,.12)), url('hj-hero-bg.jpg') center/cover no-repeat;
+    }
+    .hero-shell::before{
+      content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 14% 22%, rgba(255,255,255,.14), transparent 18%),
+        radial-gradient(circle at 86% 16%, rgba(212,175,55,.18), transparent 16%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='.27'%3E%3Cpath d='M0 120C210 220 360 70 572 138s286 90 490 4 335-64 538 30' stroke-width='2'/%3E%3Cpath d='M0 300C150 220 304 360 520 272s341-158 552-82 331 82 528-12' stroke-width='1.5'/%3E%3Cpath d='M82 90h200l120 84 152-42 118 88 142-62 152 104 146-42' stroke-width='1.3'/%3E%3Cg fill='%23d4af37' fill-opacity='.7' stroke='none'%3E%3Ccircle cx='82' cy='90' r='4'/%3E%3Ccircle cx='282' cy='90' r='4'/%3E%3Ccircle cx='402' cy='174' r='4'/%3E%3Ccircle cx='554' cy='132' r='4'/%3E%3Ccircle cx='672' cy='220' r='4'/%3E%3Ccircle cx='814' cy='158' r='4'/%3E%3Ccircle cx='966' cy='262' r='4'/%3E%3Ccircle cx='1112' cy='220' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat;
+      opacity:.9;pointer-events:none;
+    }
+    .hero-grid{position:relative;z-index:1;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:1.2rem;align-items:center}
+    .hero-left,.hero-right{
+      border:1px solid rgba(212,175,55,.34);border-radius:32px;background:linear-gradient(180deg, rgba(7,22,36,.72), rgba(11,29,46,.62));
+      backdrop-filter:blur(12px);box-shadow:var(--shadow);color:#fff
+    }
+    .hero-left{padding:2rem 1.35rem 1.35rem}
+    .hero-right{padding:1.4rem}
+    .hero-badge{display:inline-flex;align-items:center;gap:.55rem;color:#fff;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.42);padding:.75rem 1rem;border-radius:999px;font-weight:700;margin-bottom:1rem}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6.8vw,4.3rem);line-height:.95;margin-bottom:1rem}
+    .hero-lead{font-size:1.12rem;line-height:1.8;color:rgba(255,255,255,.84);max-width:680px}
+    .hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.3rem 0}
+    .hero-point{padding:1rem;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+    .hero-point strong{display:block;color:var(--gold);font-size:1rem;margin-bottom:.25rem}
+    .hero-point span{font-size:.92rem;color:rgba(255,255,255,.78)}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+    .btn-primary,.btn-secondary,.btn-outline{
+      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:54px;padding:1rem 1.5rem;border-radius:999px;font-weight:800;transition:.25s ease
+    }
+    .btn-primary{background:linear-gradient(135deg,#f1d36f,var(--gold));color:var(--navy);box-shadow:0 16px 28px rgba(212,175,55,.22)}
+    .btn-secondary{border:1px solid rgba(255,255,255,.34);color:#fff;background:rgba(255,255,255,.06)}
+    .btn-outline{border:1px solid rgba(212,175,55,.35);color:var(--gold);background:rgba(212,175,55,.08)}
+    .btn-primary:hover,.btn-secondary:hover,.btn-outline:hover{transform:translateY(-3px)}
+
+    .slide-deck{position:relative;min-height:360px;overflow:hidden;border-radius:26px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10)}
+    .slide{position:absolute;inset:0;padding:1.4rem;display:flex;flex-direction:column;justify-content:center;opacity:0;transform:translateX(25px);transition:opacity .85s ease, transform .85s ease}
+    .slide.active{opacity:1;transform:translateX(0)}
+    .slide-tag{display:inline-flex;width:fit-content;align-items:center;gap:.45rem;font-size:.82rem;font-weight:800;color:#f3d46c;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.8rem}
+    .slide h2{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.05;margin-bottom:.8rem}
+    .slide p{color:rgba(255,255,255,.80);line-height:1.7;margin-bottom:1rem}
+    .deck-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1rem}
+    .deck-dots button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.26);cursor:pointer}
+    .deck-dots button.active{background:var(--gold)}
+    .quick-panel{margin-top:1rem;padding:1rem;border-radius:22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10)}
+    .quick-panel h3{font-size:1.1rem;margin-bottom:.55rem;color:#fff}
+    .quick-panel ul{list-style:none;display:grid;gap:.55rem}
+    .quick-panel li{display:flex;gap:.65rem;align-items:flex-start;color:rgba(255,255,255,.82)}
+    .quick-panel i{color:var(--gold);margin-top:.15rem}
+
+    .section{max-width:1240px;margin:0 auto;padding:1.25rem 1.1rem}
+    .panel{background:rgba(255,255,255,.88);border:1px solid rgba(8,23,38,.08);box-shadow:0 18px 40px rgba(10,28,44,.08);border-radius:30px;padding:2rem}
+    .section-heading{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:1.4rem}
+    .eyebrow{font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:.55rem}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.9rem);line-height:1.05;color:#0f2032}
+    .section-heading p{max-width:640px;color:var(--muted);line-height:1.72}
+    .three-grid,.steps-grid,.trust-grid,.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:#fff;border:1px solid rgba(13,34,56,.08);border-radius:24px;box-shadow:0 10px 24px rgba(9,23,37,.06);padding:1.4rem}
+    .card .icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:rgba(212,175,55,.13);color:var(--gold);font-size:1.35rem;margin-bottom:1rem}
+    .card h3{font-size:1.2rem;color:#0f2032;margin-bottom:.45rem}
+    .card p{color:var(--muted);line-height:1.68}
+
+    .step-card{position:relative;padding-top:3.6rem}
+    .step-number{position:absolute;top:1.1rem;left:1.2rem;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#f1d36f,var(--gold));font-weight:800;color:var(--navy)}
+
+    .video-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:center}
+    .video-box{position:relative;min-height:360px;border-radius:30px;overflow:hidden;background:linear-gradient(145deg,#0b2135,#102940)}
+    .video-box::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,22,36,.30), rgba(7,22,36,.50)), url('hj-hero-bg.jpg') center/cover no-repeat;filter:saturate(1.05)}
+    .video-box-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:#fff}
+    .video-logo{width:min(260px,64%);margin-bottom:1rem;filter:drop-shadow(0 16px 24px rgba(0,0,0,.35))}
+    .play-button{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.40);color:#f3d46c;font-size:2.2rem;margin-bottom:1rem;box-shadow:0 18px 30px rgba(0,0,0,.22)}
+    .video-note{padding:1.4rem;border-radius:28px;background:linear-gradient(180deg,#0c2134,#12304b);color:#fff;box-shadow:var(--shadow)}
+    .video-note h3{font-size:1.6rem;margin-bottom:.6rem}
+    .video-note p{color:rgba(255,255,255,.78);line-height:1.72}
+    .video-note ul{list-style:none;display:grid;gap:.7rem;margin:1rem 0}
+    .video-note li{display:flex;gap:.65rem;align-items:flex-start}
+    .video-note i{color:var(--gold);margin-top:.2rem}
+
+    .faq-item{background:#fff;border:1px solid rgba(13,34,56,.08);border-radius:20px;padding:1.1rem 1rem;box-shadow:0 10px 24px rgba(9,23,37,.06)}
+    .faq-item summary{cursor:pointer;font-weight:800;color:#0f2032;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:.8rem}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item p{margin-top:.85rem;color:var(--muted);line-height:1.68}
+
+    .form-layout{display:grid;grid-template-columns:.92fr 1.08fr;gap:1rem}
+    .form-info{background:linear-gradient(180deg,#0c2236,#12304a);color:#fff;border-radius:30px;padding:1.6rem;box-shadow:var(--shadow)}
+    .form-info h3{font-size:1.7rem;margin-bottom:.75rem}
+    .form-info p{color:rgba(255,255,255,.78);line-height:1.75}
+    .form-info .list{display:grid;gap:.85rem;margin-top:1rem}
+    .form-info .list div{display:flex;gap:.75rem;align-items:flex-start}
+    .form-info i{color:var(--gold);margin-top:.2rem}
+    .form-card{background:#fff;border:1px solid rgba(13,34,56,.08);border-radius:30px;padding:1.6rem;box-shadow:0 14px 32px rgba(9,23,37,.08)}
+    form{display:grid;gap:.9rem;margin-top:1rem}
+    input,textarea{width:100%;padding:.98rem 1rem;border-radius:16px;border:1px solid rgba(13,34,56,.14);font:inherit;color:var(--text);background:#fbfdff}
+    textarea{min-height:150px;resize:vertical}
+    button[type="submit"]{border:none;cursor:pointer}
+
+    .closing-band{background:linear-gradient(135deg, rgba(7,22,36,.98), rgba(15,36,56,.98));border:1px solid rgba(212,175,55,.18);border-radius:32px;padding:1.8rem;color:#fff;text-align:center;position:relative;overflow:hidden}
+    .closing-band::after{content:"";position:absolute;top:-80px;right:-70px;width:220px;height:220px;background:radial-gradient(circle, rgba(212,175,55,.16), transparent 68%)}
+    .closing-band h2{color:#fff;margin-bottom:.8rem}
+    .closing-band p{max-width:760px;margin:0 auto;color:rgba(255,255,255,.80);line-height:1.75}
+    .closing-band .hero-actions{justify-content:center;margin-top:1.2rem}
+
+    footer{padding:2.2rem 1rem 4rem;text-align:center;color:#6c7a8d;font-size:.95rem}
+    footer a{color:#0f2032;font-weight:700}
+
+    @media (max-width: 1080px){
+      .hero-grid,.video-wrap,.form-layout{grid-template-columns:1fr}
+    }
+    @media (max-width: 860px){
+      .menu-toggle{display:block}
+      .nav-links{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;background:linear-gradient(180deg, rgba(7,22,36,.98), rgba(12,29,45,.98));padding:1rem;border-bottom:1px solid rgba(212,175,55,.22)}
+      .nav-links.open{display:flex}
+      .nav-links a{display:block;width:100%}
+      .hero-points,.three-grid,.steps-grid,.trust-grid,.faq-grid{grid-template-columns:1fr}
+      .hero-left,.hero-right,.panel,.form-info,.form-card{padding:1.3rem}
+      .slide-deck{min-height:310px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Menú principal">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="Herencia Justa_ Valor y Legado.png" alt="Logo Herencia Justa">
+        <span>Tu Derecho Justo Ahora</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#formulario">Consulta gratis</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+        <li><a class="pill" href="index.html#denuncias">Denuncias</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-shell">
+    <div class="hero-grid">
+      <section class="hero-left">
+        <div class="hero-badge"><i class="fa-solid fa-scale-balanced"></i> Orientación jurídica clara y cercana</div>
+        <h1>Tu Derecho Justo Ahora</h1>
+        <p class="hero-lead">Una experiencia jurídica clara, cercana y confiable para comprender tu situación, recibir una primera orientación y decidir el siguiente paso con mayor seguridad.</p>
+        <div class="hero-points">
+          <div class="hero-point"><strong>Consulta virtual gratuita</strong><span>Tu primer acercamiento sin costo.</span></div>
+          <div class="hero-point"><strong>Tarifas preferenciales</strong><span>Beneficio exclusivo para quienes llegan desde HJ.</span></div>
+          <div class="hero-point"><strong>Estudio jurídico aliado</strong><span>Respaldo profesional y humano.</span></div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#formulario"><i class="fa-regular fa-paper-plane"></i> Cuéntanos tu caso</a>
+          <a class="btn-secondary" href="#video"><i class="fa-regular fa-circle-play"></i> Ver el tráiler</a>
+        </div>
+      </section>
+
+      <aside class="hero-right">
+        <div class="slide-deck" aria-label="Presentación dinámica del servicio">
+          <article class="slide active">
+            <div class="slide-tag"><i class="fa-solid fa-flag"></i> 01 · El problema</div>
+            <h2>No saber qué hacer también cuesta</h2>
+            <p>Cuando una persona enfrenta un problema legal, la primera barrera suele ser la confusión. Esta sección existe para romper esa barrera de inmediato.</p>
+            <a href="#beneficios" class="btn-outline">Descubrir beneficios</a>
+          </article>
+          <article class="slide">
+            <div class="slide-tag"><i class="fa-solid fa-comments"></i> 02 · La solución</div>
+            <h2>Empieza con una consulta virtual gratuita</h2>
+            <p>Queremos que la gente dé el primer paso sin miedo. Cuéntanos tu situación y recibe orientación inicial de forma clara y accesible.</p>
+            <a href="#formulario" class="btn-outline">Iniciar consulta</a>
+          </article>
+          <article class="slide">
+            <div class="slide-tag"><i class="fa-solid fa-tags"></i> 03 · La ventaja</div>
+            <h2>Venir por Herencia Justa sí tiene beneficio</h2>
+            <p>Si tu caso requiere una gestión más profunda o representación presencial, accedes a tarifas preferenciales por ser parte del ecosistema HJ.</p>
+            <a href="#como-funciona" class="btn-outline">Cómo funciona</a>
+          </article>
+          <article class="slide">
+            <div class="slide-tag"><i class="fa-solid fa-gavel"></i> 04 · El respaldo</div>
+            <h2>Respaldo profesional cuando lo necesites</h2>
+            <p>Detrás de esta experiencia existe un estudio jurídico aliado que puede acompañarte cuando tu situación requiera una atención más profunda.</p>
+            <a href="#video" class="btn-outline">Ver presentación</a>
+          </article>
+        </div>
+        <div class="deck-dots" id="deckDots">
+          <button class="active" aria-label="Diapositiva 1"></button>
+          <button aria-label="Diapositiva 2"></button>
+          <button aria-label="Diapositiva 3"></button>
+          <button aria-label="Diapositiva 4"></button>
+        </div>
+        <div class="quick-panel">
+          <h3>Resumen rápido</h3>
+          <ul>
+            <li><i class="fa-solid fa-check"></i><span>Una explicación clara, sin lenguaje jurídico innecesariamente complejo.</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Un proceso sencillo para saber qué hacer y qué esperar.</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Atención confidencial con respaldo de Peñafiel Estudio Jurídico.</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section panel" id="beneficios">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Tres pilares</div>
+          <h2>Tres beneficios pensados para ayudarte</h2>
+        </div>
+        <p>Una propuesta sencilla: empezar sin costo, acceder a condiciones preferenciales y contar con respaldo profesional cuando el caso lo requiera.</p>
+      </div>
+      <div class="three-grid">
+        <article class="card"><div class="icon"><i class="fa-solid fa-comments"></i></div><h3>Consulta virtual gratuita</h3><p>La primera respuesta importa. Aquí el usuario encuentra una orientación inicial clara sin necesidad de pagar para saber si tiene camino o no.</p></article>
+        <article class="card"><div class="icon"><i class="fa-solid fa-tags"></i></div><h3>Tarifas preferenciales</h3><p>Quienes llegan a través de Herencia Justa pueden acceder a condiciones preferenciales cuando necesitan continuar con una atención jurídica.</p></article>
+        <article class="card"><div class="icon"><i class="fa-solid fa-gavel"></i></div><h3>Respaldo profesional</h3><p>La confianza se completa cuando el usuario entiende que detrás de esta experiencia hay un estudio jurídico aliado, serio y accesible.</p></article>
+      </div>
+    </section>
+
+    <section class="section panel" id="como-funciona">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Proceso</div>
+          <h2>¿Cómo funciona?</h2>
+        </div>
+        <p>Te explicamos el proceso de forma directa para que sepas qué hacer desde el primer momento y qué puedes esperar de la orientación inicial.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="card step-card"><span class="step-number">1</span><h3>Cuéntanos qué pasó</h3><p>Completa el formulario con tu nombre, medio de contacto y una explicación sencilla de tu situación.</p></article>
+        <article class="card step-card"><span class="step-number">2</span><h3>Analizamos el caso</h3><p>Revisamos la información y definimos la orientación inicial más útil de acuerdo con lo que nos compartiste.</p></article>
+        <article class="card step-card"><span class="step-number">3</span><h3>Recibes una respuesta</h3><p>Obtienes una guía inicial clara para entender tus opciones, tus riesgos y el mejor siguiente paso.</p></article>
+      </div>
+      <div class="steps-grid" style="margin-top:1rem;grid-template-columns:repeat(2,1fr);">
+        <article class="card step-card"><span class="step-number">4</span><h3>Si necesitas más, continúas</h3><p>Cuando el caso requiere una actuación más profunda, puedes acceder a una cita o acompañamiento con tarifa preferencial.</p></article>
+        <article class="card step-card"><span class="step-number">5</span><h3>Decides con información</h3><p>Con la orientación recibida puedes evaluar tus opciones y escoger el siguiente paso con mayor seguridad.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="video">
+      <div class="video-wrap">
+        <div class="video-box">
+          <div class="video-box-content">
+            <div class="play-button"><i class="fa-solid fa-play"></i></div>
+            <img class="video-logo" src="Herencia Justa_ Valor y Legado.png" alt="Herencia Justa">
+            <h2 style="color:#fff;font-size:2rem;margin-bottom:.6rem;">Próximamente: tráiler oficial</h2>
+            <p style="max-width:560px;color:rgba(255,255,255,.82);line-height:1.7;">En un minuto conocerás qué es “Tu Derecho Justo Ahora”, cómo funciona y de qué manera puede ayudarte a dar el primer paso.</p>
+          </div>
+        </div>
+        <aside class="video-note">
+          <div class="eyebrow" style="color:#f3d46c;">Presentación</div>
+          <h3>Lo que conocerás en el tráiler</h3>
+          <p>El tráiler presentará de manera breve y cercana el servicio, sus beneficios y la ruta para solicitar una orientación jurídica.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i><span>Qué es “Tu Derecho Justo Ahora”.</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Cómo funciona paso a paso.</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Por qué la consulta inicial es gratuita.</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Qué beneficio especial recibe quien llega desde Herencia Justa.</span></li>
+          </ul>
+          <a href="#formulario" class="btn-primary">Ir al formulario</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Confianza</div>
+          <h2>Indicadores que refuerzan la decisión</h2>
+        </div>
+        <p>Queremos que cada persona encuentre seguridad, claridad y un sentido real de acompañamiento desde su primer contacto.</p>
+      </div>
+      <div class="trust-grid">
+        <article class="card"><div class="icon"><i class="fa-solid fa-user-shield"></i></div><h3>Confidencialidad</h3><p>La información compartida en el formulario se trata con reserva y se utiliza únicamente para atender la consulta.</p></article>
+        <article class="card"><div class="icon"><i class="fa-solid fa-handshake-angle"></i></div><h3>Cercanía</h3><p>La experiencia busca que la persona sienta que hay alguien del otro lado dispuesto a orientarla sin lenguaje complicado ni barreras innecesarias.</p></article>
+        <article class="card"><div class="icon"><i class="fa-solid fa-circle-check"></i></div><h3>Claridad</h3><p>El objetivo no es saturar con teoría, sino aterrizar el problema, ordenar las opciones y facilitar la toma de decisión.</p></article>
+      </div>
+    </section>
+
+    <section class="section panel" id="faq">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Preguntas frecuentes</div>
+          <h2>Lo esencial, sin complicarlo</h2>
+        </div>
+        <p>Respondemos las dudas más importantes antes de que envíes tu consulta.</p>
+      </div>
+      <div class="faq-grid" style="grid-template-columns:1fr 1fr;">
+        <details class="faq-item"><summary>¿Cuánto cuesta la consulta virtual?<i class="fa-solid fa-plus"></i></summary><p>La consulta virtual inicial es totalmente gratuita. Su propósito es darte una primera orientación clara para que sepas qué hacer.</p></details>
+        <details class="faq-item"><summary>¿Qué significa tarifa preferencial?<i class="fa-solid fa-plus"></i></summary><p>Si tu caso requiere una gestión posterior o representación presencial, accedes a un costo preferencial por llegar a través de Herencia Justa.</p></details>
+        <details class="faq-item"><summary>¿Quién revisa mi caso?<i class="fa-solid fa-plus"></i></summary><p>La orientación se articula con un estudio jurídico aliado, lo que añade respaldo profesional real a toda la experiencia.</p></details>
+        <details class="faq-item"><summary>¿Puedo escribir desde cualquier lugar del país?<i class="fa-solid fa-plus"></i></summary><p>Sí. La consulta virtual está pensada para atender a personas de distintas ciudades, sin limitarse solo a Cuenca.</p></details>
+      </div>
+    </section>
+
+    <section class="section" id="formulario">
+      <div class="form-layout">
+        <aside class="form-info">
+          <div class="eyebrow" style="color:#f3d46c;">Primer paso</div>
+          <h3>Cuéntanos tu caso</h3>
+          <p>Cuéntanos brevemente qué ocurrió y deja un medio de contacto. Aquí comienza tu orientación.</p>
+          <div class="list">
+            <div><i class="fa-solid fa-comments"></i><span>La consulta virtual inicial es gratuita.</span></div>
+            <div><i class="fa-solid fa-tags"></i><span>Si necesitas continuar, puedes acceder a tarifa preferencial.</span></div>
+            <div><i class="fa-solid fa-lock"></i><span>Tu información se maneja con confidencialidad.</span></div>
+            <div><i class="fa-solid fa-gavel"></i><span>Existe respaldo de un estudio jurídico aliado.</span></div>
+          </div>
+        </aside>
+        <article class="form-card">
+          <div class="eyebrow">Formulario de consulta</div>
+          <h2 style="font-size:2rem;">Solicita tu orientación</h2>
+          <form action="https://formsubmit.co/herenciajusta@gmail.com" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" name="whatsapp" placeholder="Número de WhatsApp" required>
+            <input type="email" name="correo" placeholder="Correo electrónico (opcional)">
+            <textarea name="mensaje" placeholder="Cuéntanos qué ocurrió" required></textarea>
+            <input type="hidden" name="_subject" value="Nueva consulta legal desde Tu Derecho Justo Ahora">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit" class="btn-primary">Enviar mi caso</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="closing-band">
+        <div class="eyebrow" style="color:#f3d46c;">Cierre</div>
+        <h2>No tienes que enfrentar tu problema sin orientación</h2>
+        <p>Da el primer paso con una consulta virtual inicial gratuita, condiciones preferenciales y el respaldo de Peñafiel Estudio Jurídico.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#formulario">Solicitar consulta</a>
+          <a class="btn-secondary" href="index.html">Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Herencia Justa. Todos los derechos reservados.</p>
+    <p style="margin-top:.55rem;">Herencia Justa es una iniciativa ciudadana juvenil independiente. Las consultas en línea no constituyen asesoría legal formal ni crean por sí mismas una relación abogado-cliente. <a href="legal.html">Política de privacidad y términos</a>.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    }
+
+    (function () {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const dots = Array.from(document.querySelectorAll('#deckDots button'));
+      let current = 0;
+      function show(index) {
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        current = index;
+      }
+      dots.forEach((dot, index) => dot.addEventListener('click', () => show(index)));
+      setInterval(() => show((current + 1) % slides.length), 6000);
+    })();
+  </script>
+</body>
+</html>
