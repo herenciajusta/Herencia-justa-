@@ -29,6 +29,8 @@
     footer{max-width:980px;margin:0 auto 2rem;padding:0 1.2rem;color:var(--muted);font-size:.9rem}
     @media(max-width:640px){.topbar-inner{align-items:flex-start}.brand{font-size:.9rem}.legal-card{border-radius:18px}}
   </style>
+  <link rel="stylesheet" href="/analytics.css">
+  <script defer src="/analytics.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -53,8 +55,12 @@
       <h2>3. Seguridad</h2>
       <p>Mantenemos medidas de seguridad razonables para proteger tus datos. Sin embargo, al tratarse de formularios alojados en servicios de terceros, recomendamos no compartir información sensible o confidencial.</p>
 
-      <h2>4. Cookies</h2>
-      <p>Nuestro sitio utiliza cookies técnicas para mejorar la experiencia de navegación y recordar preferencias básicas. No empleamos cookies con fines publicitarios ni de seguimiento de comportamiento.</p>
+      <h2 id="cookies">4. Cookies y medición de visitas</h2>
+      <p>El sitio usa almacenamiento técnico para recordar tus preferencias. Cuando aceptas la medición, Google Analytics utiliza cookies para estimar el número de usuarios, contar sesiones y páginas vistas, y registrar clics en los enlaces de WhatsApp e Instagram. La configuración del sitio desactiva las funciones de personalización de anuncios.</p>
+      <p>Puedes aceptar o rechazar la medición y cambiar tu elección aquí en cualquier momento. <a href="https://policies.google.com/technologies/partner-sites?hl=es">Cómo usa Google los datos de estos servicios</a>.</p>
+      <div id="analytics-preferences" hidden>
+        <p role="status"></p>
+      </div>
 
       <h2>5. Propiedad intelectual</h2>
       <p>Todos los textos, imágenes, logotipos y elementos gráficos de este sitio pertenecen a Herencia Justa o han sido utilizados con autorización. Queda prohibida su reproducción total o parcial sin nuestra aprobación por escrito.</p>
