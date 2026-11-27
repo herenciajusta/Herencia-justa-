@@ -5,7 +5,8 @@
     "autor": "J. Peñafiel",
     "categoria": "Social",
     "resumen": "Un recorrido sobre cómo los jóvenes han empezado a influir en los procesos locales y el despertar de una nueva conciencia social.",
-    "pdf": "docs/participacion_juvenil_cuenca.pdf"
+    "url": "participacion_juvenil.html",
+    "imagen": "/assets/participacion.webp"
   },
   {
     "titulo": "Los GADs frente al desafío de la transparencia",
@@ -13,6 +14,7 @@
     "autor": "M. Granda",
     "categoria": "Jurídico",
     "resumen": "Una mirada jurídica sobre la obligación de rendición de cuentas por parte de las autoridades cantonales.",
-    "pdf": "docs/gads_desafio_transparencia.pdf"
+    "url": "gads_transparencia.html",
+    "imagen": "/assets/transparencia.webp"
   }
 ]

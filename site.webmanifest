@@ -1,20 +1,12 @@
 {
   "name": "Herencia Justa",
-  "short_name": "HerenciaJusta",
-  "start_url": "/index(14).html",
+  "short_name": "Herencia Justa",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0d1b2a",
-  "theme_color": "#d4af37",
+  "background_color": "#faf9f4",
+  "theme_color": "#183a31",
   "icons": [
-    {
-      "src": "logo-herencia.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "logo-herencia.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    {"src": "/assets/herencia-escudo.webp", "sizes": "192x192", "type": "image/webp"},
+    {"src": "/assets/herencia-escudo-512.webp", "sizes": "512x512", "type": "image/webp"}
   ]
 }
