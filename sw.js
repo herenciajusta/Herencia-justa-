@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hj-v2';
+const CACHE_NAME = 'hj-v3';
 const OFFLINE_ASSETS = new Set([
   '/',
   '/index.html',
@@ -13,6 +13,15 @@ const OFFLINE_ASSETS = new Set([
   '/assets/estudio-oficina.webp',
   '/assets/participacion.webp',
   '/assets/transparencia.webp',
+  '/assets/mesa-editorial.webp',
+  '/assets/cupulas-cuenca.webp',
+  '/assets/iconos/whatsapp.png',
+  '/assets/iconos/orientacion.png',
+  '/assets/iconos/participacion.png',
+  '/assets/iconos/boletin.png',
+  '/assets/iconos/microfono.png',
+  '/assets/iconos/privacidad.png',
+  '/assets/iconos/tarifas.png',
   '/articulos.json',
   '/noticias.json'
 ]);

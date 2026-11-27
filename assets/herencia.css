@@ -162,6 +162,34 @@ p { text-wrap: pretty; }
 .on-dark .button--outline:hover { background: #2a5045; border-color: var(--white); }
 .button-row { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; }
 
+/* Icons rasterized from Font Awesome Free 6.5.2 by Fonticons, Inc. Licensed CC BY 4.0.
+   https://fontawesome.com/license/free */
+.site-icon {
+  display: block;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+.site-icon--whatsapp { --icon: url('/assets/iconos/whatsapp.png'); }
+.site-icon--orientacion { --icon: url('/assets/iconos/orientacion.png'); }
+.site-icon--participacion { --icon: url('/assets/iconos/participacion.png'); }
+.site-icon--boletin { --icon: url('/assets/iconos/boletin.png'); }
+.site-icon--microfono { --icon: url('/assets/iconos/microfono.png'); }
+.site-icon--privacidad { --icon: url('/assets/iconos/privacidad.png'); }
+.site-icon--tarifas { --icon: url('/assets/iconos/tarifas.png'); }
+.icon-disc {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--veiled);
+  color: var(--leaf);
+}
+
 .text-link { font-weight: 750; text-underline-offset: .24em; text-decoration-thickness: 1px; }
 .text-link:hover { color: var(--gold-dark); }
 .on-dark .text-link:hover { color: var(--gold); }
@@ -218,12 +246,21 @@ p { text-wrap: pretty; }
   margin-block-start: clamp(1.1rem, 2.3vw, 2rem);
   border-block: 1px solid var(--line);
 }
-.pathway { min-width: 0; padding: 1.45rem clamp(.5rem, 2.6vw, 2.1rem); text-decoration: none; }
+.pathway {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(.55rem, 1.2vw, 1rem);
+  min-width: 0;
+  padding: 1.45rem clamp(.5rem, 2.5vw, 2rem);
+  text-decoration: none;
+}
 .pathway:first-child { padding-inline-start: 0; }
 .pathway + .pathway { border-inline-start: 1px solid var(--line); }
 .pathway h2 { margin-bottom: .45rem; font-size: clamp(1.65rem, 2.55vw, 2.55rem); text-wrap: initial; }
 .pathway p { color: var(--muted); font-size: .96rem; }
 .pathway:hover h2 { color: var(--gold-dark); text-decoration: underline; text-underline-offset: .15em; text-decoration-thickness: 1px; }
+.pathway:hover .icon-disc, .pathway:focus-visible .icon-disc { background: var(--gold); color: var(--forest-dark); }
 
 .feature {
   display: grid;
@@ -245,12 +282,23 @@ p { text-wrap: pretty; }
   gap: 1rem;
 }
 .participation-card {
+  --card-padding: clamp(1.45rem, 4vw, 3.3rem);
   display: grid;
   gap: 1rem;
+  overflow: hidden;
   border-radius: var(--radius);
-  padding: clamp(1.45rem, 4vw, 3.3rem);
+  padding: var(--card-padding);
 }
 .participation-card:not(.on-dark) { border: 1px solid var(--line); background: var(--white); }
+.participation-visual {
+  aspect-ratio: 2.55;
+  overflow: hidden;
+  margin: calc(-1 * var(--card-padding)) calc(-1 * var(--card-padding)) .35rem;
+  background: var(--forest);
+}
+.participation-visual img, .about-visual img { width: 100%; height: 100%; object-fit: cover; }
+.participation-visual img { object-position: center 60%; }
+.participation-visual--youth img { object-position: center 38%; }
 .participation-card h3 { font-size: clamp(2.3rem, 3.75vw, 3.65rem); }
 .participation-card ul { display: grid; gap: .45rem; padding-inline-start: 1.15rem; }
 .participation-card .button-row { margin-top: .3rem; }
@@ -270,6 +318,33 @@ p { text-wrap: pretty; }
 .inline-feature h3 { margin-bottom: .35rem; }
 .inline-feature p { color: var(--muted); }
 .inline-feature .button-row { justify-content: end; }
+
+.podcast-feature {
+  grid-template-columns: minmax(0, 1fr) minmax(0, .75fr);
+  gap: 1.5rem;
+  padding: clamp(1.35rem, 4vw, 2.8rem);
+  border-color: transparent;
+  background: var(--forest-dark);
+}
+.podcast-feature h3 { margin-top: .55rem; }
+.podcast-art {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: .9rem;
+  width: min(100%, 21rem);
+  justify-self: end;
+}
+.podcast-art .icon-disc { width: 3.6rem; background: var(--gold); color: var(--forest-dark); }
+.podcast-art .site-icon { width: 1.6rem; height: 1.6rem; }
+.podcast-art::before, .podcast-art::after {
+  content: '';
+  height: 3.4rem;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 2px, transparent 2px 8px);
+  clip-path: polygon(0 44%, 22% 34%, 34% 16%, 46% 36%, 58% 7%, 72% 29%, 86% 17%, 100% 36%, 100% 64%, 86% 83%, 72% 71%, 58% 93%, 46% 64%, 34% 84%, 22% 66%, 0 56%);
+  opacity: .65;
+}
+.podcast-art::after { transform: scaleX(-1); }
 
 .editorial { padding-block: var(--section-gap); margin-block-start: var(--section-gap); background: var(--veiled); }
 
@@ -301,10 +376,16 @@ p { text-wrap: pretty; }
 .news-section h2 { font-size: clamp(2.6rem, 4vw, 3.8rem); }
 .news-section .section-heading { margin-bottom: 1.35rem; }
 
-.about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(1.4rem, 6vw, 6rem); }
-.about-grid h2 { margin-top: .5rem; }
-.about-grid p:not(.kicker) { font-size: clamp(1.1rem, 1.8vw, 1.33rem); color: var(--muted); }
-.about-grid p + p { margin-top: .9rem; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; gap: clamp(1.4rem, 5.4vw, 5.2rem); }
+.about-copy h2 { margin: .5rem 0 1.25rem; }
+.about-copy p:not(.kicker) { max-width: 39rem; font-size: clamp(1.05rem, 1.45vw, 1.18rem); color: var(--muted); }
+.about-copy p + p { margin-top: .9rem; }
+.about-visual { aspect-ratio: 1.55; overflow: hidden; border-radius: var(--radius); background: var(--veiled); }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .participation-visual img, .about-visual img { transition: transform .26s ease-out; }
+  .participation-card:hover .participation-visual img, .about-visual:hover img { transform: scale(1.04); }
+}
 
 .contact-grid {
   display: grid;
@@ -372,6 +453,7 @@ fieldset { margin: 0; padding: .5rem .7rem; border: 1px solid var(--line); borde
 .info-grid article, .steps li { border-top: 1px solid #aebcaf; padding: 1rem .15rem 0 0; }
 .info-grid h3, .steps h3 { margin: 0 0 .5rem; }
 .info-grid p, .steps p { color: var(--muted); }
+.info-grid .icon-disc { margin-block-end: .8rem; }
 .step-count { display: block; margin-bottom: .75rem; color: var(--gold-dark); font-weight: 750; letter-spacing: .05em; }
 
 .consult-form { background: var(--veiled); }
@@ -410,6 +492,7 @@ fieldset { margin: 0; padding: .5rem .7rem; border: 1px solid var(--line); borde
   inset: auto max(.9rem, env(safe-area-inset-right)) max(.9rem, env(safe-area-inset-bottom)) auto;
   display: inline-flex;
   align-items: center;
+  gap: .5rem;
   min-height: 3rem;
   padding: .65rem .9rem;
   border: 1px solid #b1c8b7;
@@ -422,6 +505,7 @@ fieldset { margin: 0; padding: .5rem .7rem; border: 1px solid var(--line); borde
   text-decoration: none;
   box-shadow: 0 4px 18px #142b2630;
 }
+.floating-cta .site-icon, .floating-whatsapp .site-icon { width: 1.45rem; height: 1.45rem; color: #9be6aa; }
 .floating-cta:hover, .floating-whatsapp:hover { background: #30654e; }
 
 @media (max-width: 980px) {
@@ -454,6 +538,7 @@ fieldset { margin: 0; padding: .5rem .7rem; border: 1px solid var(--line); borde
   .info-grid, .steps { grid-template-columns: 1fr; gap: 1.2rem; }
   .inline-feature { grid-template-columns: 1fr; }
   .inline-feature .button-row { justify-content: start; }
+  .podcast-art { justify-self: start; }
   .story-grid { grid-template-columns: 1fr; }
   .video-feature .feature-content { padding: 1.25rem 0 0; }
   .video-feature video { max-height: 25rem; }
