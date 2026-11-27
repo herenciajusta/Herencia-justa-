@@ -41,15 +41,15 @@
       ad_user_data: 'denied',
       ad_personalization: 'denied'
     });
-    gtag('js', new Date());
-    gtag('config', measurementId, {
-      send_page_view: false,
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false,
+    gtag('set', {
       page_location: pageLocation,
       page_referrer: pageReferrer
     });
-    gtag('event', 'page_view');
+    gtag('js', new Date());
+    gtag('config', measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
 
     document.addEventListener('click', trackSocialClick, true);
     document.addEventListener('auxclick', trackSocialClick, true);
