@@ -1,5 +1,5 @@
 (() => {
-  const measurementId = ''; // ID del flujo web de herenciajustaec.com.
+  const measurementId = 'G-2D3SYFCWEC'; // ID del flujo web de herenciajustaec.com.
   if (location.hostname !== 'herenciajustaec.com' || !/^G-[A-Z0-9]+$/.test(measurementId)) return;
 
   const preferenceKey = 'hj-analytics-consent';
